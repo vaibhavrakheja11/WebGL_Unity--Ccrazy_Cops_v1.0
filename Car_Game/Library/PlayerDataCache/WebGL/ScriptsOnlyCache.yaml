@@ -454,7 +454,7 @@ ScriptsOnlyBuild:
     className: Mask
   - hash:
       serializedVersion: 2
-      Hash: f1a5ffa1a79894594e1d772a1e476b9a
+      Hash: c82296218be0837c0ffe4a8b44b76f0d
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityStandardAssets.Vehicles.Car
     className: CarUserControl
@@ -1055,4 +1055,4 @@ ScriptsOnlyBuild:
   platform: 20
   scenePathNames:
   - Assets/Cartoon SportCar B01/Cartoon_SportCar_B01_exemple.unity
-  playerPath: /Users/vaibhavrakheja/Documents/Unity Car Game/Car Game/WebGLBuild5.0
+  playerPath: /Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/WebGLBuild7.0

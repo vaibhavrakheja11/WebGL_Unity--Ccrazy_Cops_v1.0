@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{b4259087-23d1-2fcd-dee4-d6452b41554d}</ProjectGuid>
+    <ProjectGuid>{b70069d6-7670-dc5e-81c4-11049e5ef9ac}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -275,7 +275,7 @@
  <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/Car Game/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/PackageCache/com.unity.ext.nunit@1.0.0/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
  <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -634,59 +634,59 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{9d0b586a-917f-714b-35fe-c7496e362ce4}</Project>
+      <Project>{52de1778-568c-076a-07d5-62bde1a27f2f}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{7c6d18bc-89e0-eba9-9012-ca0ce808884e}</Project>
+      <Project>{f4e969b3-8783-c163-1617-c1d265b66d3c}</Project>
       <Name>UnityEditor.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{a8bd9634-b7b8-eead-c219-cabc6a0ff4b0}</Project>
+      <Project>{b406c156-1cec-7f71-a8bb-2a2eb7e1371b}</Project>
       <Name>UnityEngine.TestRunner</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{e79b497b-f309-7a2a-6f12-fa314b5582af}</Project>
+      <Project>{9d811c5a-7f7c-8ba4-4e9e-3fcc66d37e0e}</Project>
       <Name>Unity.Timeline.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Cinemachine.csproj">
-      <Project>{e93a690b-a215-338a-6dfe-ae4f1c4bca9f}</Project>
+      <Project>{a374e926-935d-a8e6-62bd-ef4c9183d4db}</Project>
       <Name>Cinemachine</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{ef441e4c-d95e-8086-44b1-55deb18bf4c7}</Project>
+      <Project>{04933625-f27c-06ef-9f61-7b74dfc0068e}</Project>
       <Name>Unity.VSCode.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{079a2673-86f9-4777-fe62-fb792b20f677}</Project>
+      <Project>{44320408-f05a-da5f-ce06-689516a556b0}</Project>
       <Name>Unity.TextMeshPro.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{cf1cebf6-c808-72d6-bb15-f65fec2d7977}</Project>
+      <Project>{23f16995-2966-a2d4-1c7c-07e06a3ac9f3}</Project>
       <Name>UnityEngine.UI</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{da4aa2fc-eb22-20ff-f7dd-42d648f5c595}</Project>
+      <Project>{8701c212-e37e-0fd3-ea2f-e46b0c36e9d1}</Project>
       <Name>Unity.Timeline</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.CollabProxy.Editor.csproj">
-      <Project>{d8fd4ce4-99f2-5c96-3693-ca5da6c48be3}</Project>
+      <Project>{3e68e49e-cdb7-2c56-a950-aba10f8a8376}</Project>
       <Name>Unity.CollabProxy.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{80534916-b4c7-1f0e-bf0b-9cc97857131b}</Project>
+      <Project>{6ac4a2e0-db08-2417-2d86-0aef90fd8455}</Project>
       <Name>Unity.Rider.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="com.unity.cinemachine.editor.csproj">
-      <Project>{c45f39fe-8d17-38d0-b78b-8d04a9b97cc5}</Project>
+      <Project>{8f3f56cd-d3bd-90d6-fa93-c2b06de579b5}</Project>
       <Name>com.unity.cinemachine.editor</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{967c5b6f-ec8f-d8c1-f602-716b9201c0f0}</Project>
+      <Project>{6ee4dc94-38d6-c059-c984-b2403aab6b31}</Project>
       <Name>Unity.TextMeshPro</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{d02809d1-191d-e150-391b-57a09924273c}</Project>
+      <Project>{32aee187-6090-4039-3979-f453d82f0ccc}</Project>
       <Name>UnityEditor.UI</Name>
     </ProjectReference>
   </ItemGroup>

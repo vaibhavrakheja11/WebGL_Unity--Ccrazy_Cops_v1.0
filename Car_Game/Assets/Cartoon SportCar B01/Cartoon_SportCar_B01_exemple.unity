@@ -232,7 +232,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 19721754}
-  m_LocalRotation: {x: -0.07604181, y: -0.031798963, z: 0.5114861, w: -0.8553295}
+  m_LocalRotation: {x: -0.078265786, y: 0.023579223, z: -0.22687384, w: -0.97048795}
   m_LocalPosition: {x: 153.41948, y: 2.5807958, z: -669.7439}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1108,6 +1108,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a08ea20e3ca54e4bbd7e7e3b1a277cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &540983973
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540983971}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b3ff9b8bfacbe454886cf99886b641d1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &540983977
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2007,7 +2103,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1502857057}
-  m_LocalRotation: {x: 0.00000002235174, y: -0.0000000074505797, z: 0.003537035, w: 0.9999938}
+  m_LocalRotation: {x: -0, y: -0, z: 0.008487963, w: 0.99996406}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2349,6 +2445,14 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
+      propertyPath: audioList.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
+      propertyPath: PoliceAudioDialogs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
       propertyPath: dialogueTrigger
       value: 
       objectReference: {fileID: 540983977}
@@ -2356,6 +2460,42 @@ PrefabInstance:
       propertyPath: dialogueManager
       value: 
       objectReference: {fileID: 101389958}
+    - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
+      propertyPath: audioList.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
+      propertyPath: PoliceAudioDialogs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c30284ee330e4ffdbe5244476a0a2d9, type: 3}
+    - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
+      propertyPath: PoliceAudioDialogs.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: b3ff9b8bfacbe454886cf99886b641d1, type: 3}
+    - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
+      propertyPath: PoliceAudioDialogs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 35b9a5415c8394a3fa6438c7ebd99e28, type: 3}
+    - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
+      propertyPath: PoliceAudioDialogs.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: c4e3fe1a68e9642769b980673eb8d967, type: 3}
+    - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
+      propertyPath: PoliceAudioDialogs.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1de26ea92c040425f9502aaee70ec1f0, type: 3}
+    - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
+      propertyPath: PoliceAudioDialogs.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2f3b9c2dd00754b57b13abc164e2a072, type: 3}
+    - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
+      propertyPath: PoliceAudioDialogs.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: e4a67fccd55494a8094579ff037f3c85, type: 3}
+    - target: {fileID: 11473480, guid: ffe00fa3bd41b9a4db665bf728e3c1e1, type: 3}
+      propertyPath: PoliceAudioDialogs.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: fad2aa1b9b0cd400681a5d1672357e2d, type: 3}
     - target: {fileID: 4128316519521325834, guid: ffe00fa3bd41b9a4db665bf728e3c1e1,
         type: 3}
       propertyPath: m_Enabled

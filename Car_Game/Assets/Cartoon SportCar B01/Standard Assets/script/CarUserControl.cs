@@ -13,6 +13,8 @@ namespace UnityStandardAssets.Vehicles.Car
         public GameObject car;
         public GameObject particleGameObjectL;
         public GameObject particleGameObjectR;
+        public AudioClip[] PoliceAudioDialogs;
+        
 
         public bool isReady;
         private float waitTime;
@@ -21,6 +23,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public DialogueManager dialogueManager;
 
         public int dialogueNumber = 1;
+        public AudioSource audioSource;
 
         private void Awake()
         {
@@ -35,7 +38,7 @@ namespace UnityStandardAssets.Vehicles.Car
         }
         private void Start()
         {
-            
+            audioSource = GetComponent<AudioSource>();
         }
 
         
@@ -133,13 +136,15 @@ namespace UnityStandardAssets.Vehicles.Car
                 
                 if(Input.GetKeyDown(KeyCode.E) && other.gameObject.name == "5")
                     {
-                    Application.ExternalEval("window.open('http://Github.com');");
-                                
+                    Application.ExternalEval("window.open('http://Github.com');"); 
+                    audioSource.clip = PoliceAudioDialogs[4];
+                    audioSource.Play();            
                     }
                 if(Input.GetKeyDown(KeyCode.E) && other.gameObject.name == "4")
                     {
-                    Application.ExternalEval("window.open('http://Github.com');");
-                                
+                    Application.ExternalEval("window.open('http://Github.com');"); 
+                    audioSource.clip = PoliceAudioDialogs[1];
+                    audioSource.Play();      
                     }
             }
 
