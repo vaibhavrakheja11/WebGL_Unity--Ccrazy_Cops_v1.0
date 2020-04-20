@@ -1,5 +1,0 @@
-sceneSetups:
-- path: Assets/Cartoon SportCar B01/Cartoon_SportCar_B01_exemple.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
