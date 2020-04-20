@@ -1,0 +1,2450 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr" ng-app="APP">
+<head>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
+    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
+    <title>Materialize - Material Design Admin Template</title>
+    <!-- Favicons-->
+    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+    <!-- Favicons-->
+    <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#00bcd4">
+    <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+    <!-- For Windows Phone -->
+    <!-- CORE CSS-->
+    <link href="css//materialize.css" type="text/css" rel="stylesheet">
+    <link href="css//style.css" type="text/css" rel="stylesheet">
+    <!-- Custome CSS-->
+    <link href="css/custom/custom.css" type="text/css" rel="stylesheet">
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <link href="vendors/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet">
+    <link href="vendors/flag-icon/css/flag-icon.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  
+    <link rel="stylesheet" type="text/css" href="css/dark.scss">
+    <!-- CSS code here-->
+    <style>
+
+      
+      #WorlCloudChart {
+          width:100%;
+          height: 500px;
+        }
+
+      #ngview{
+        position: absolute;
+        top: 10%;
+        left:18%;
+        right:2%;
+        z-index:2;
+        }
+
+      @media screen and (max-width: 900px){
+          #ngview{
+            position: absolute;
+            top: 10%;
+            left:8%;
+            right:2%;
+            z-index:2;
+          }
+      }
+
+
+      
+      
+
+    </style>
+    <!-- CSS code ends here-->
+
+
+  </head>
+
+<body>
+
+
+  <div class="container" style="margin:0; padding:0;">
+			<div ng-controller="mainController">
+         <!-- Start Page Loading -->
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+    <!-- End Page Loading -->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!-- START HEADER -->
+    <header id="header" class="page-topbar">
+      <!-- start header nav-->
+        <div class="navbar-fixed">
+          <nav class="mavbar-main navbar-color gradient-45deg-purple-deep-orange" id="navbar" style="height: 10%">
+            <div class="nav-wrapper">
+              <ul>
+                <li>
+                  <h1 class="logo-wrapper">
+                    <a href="index.html" class="brand-logo darken-1">
+                      <img src="images/logo/materialize-logo.png" alt="materialize logo">
+                      <span class="logo-text hide-on-med-and-down">CineView</span>
+                    </a>
+                  </h1>
+                </li>
+              </ul>
+              <div class="header-search-wrapper hide-on-med-and-down">
+                
+                <b><i><h5 style="margin-top: -10px; "> Too Fast Too Furious</h5></i></b>
+              </div>
+              <ul class="right hide-on-med-and-down">
+                <li>
+                  <a href="javascript:void(0);" class="waves-effect waves-block waves-light translation-button" data-activates="translation-dropdown">
+                    <span class="flag-icon flag-icon-gb"></span>
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen">
+                    <i class="material-icons">settings_overscan</i>
+                  </a>
+                </li>
+                <!-- <li>
+                  <a class="waves-effect waves-block waves-light datepicker">
+                    <i class="material-icons ">notifications_none</i>
+                  </a>
+                </li> -->
+                <li>
+                  <a class="waves-effect waves-light modal-trigger" href="#modal1">
+                    <i class="fas fa-arrows-alt-h"></i>
+                  </a>
+                </li>
+                  <li>
+                  <a href="javascript:void(0);" class="waves-effect waves-block waves-light profile-button" data-activates="profile-dropdown">
+                    <span class="avatar-status avatar-online">
+                      <img src="images/avatar/avatar-7.png" alt="avatar">
+                      <i></i>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse">
+                    <i class="material-icons">format_indent_increase</i>
+                  </a>
+                </li>
+              </ul>
+              <!-- translation-button -->
+              <ul id="translation-dropdown" class="dropdown-content">
+                <li>
+                  <a ng-click="setLang('all')" class="grey-text text-darken-1">
+                    <i class="fas fa-globe-asia" style="color: green;"></i> All</a>
+                </li>
+                <li>
+                  <a ng-click="setLang('en')" class="grey-text text-darken-1">
+                    <i class="flag-icon flag-icon-gb"></i> English</a>
+                </li>
+                <li>
+                  <a ng-click="setLang('hi')" class="grey-text text-darken-1">
+                    <i class="flag-icon flag-icon-in"></i> India</a>
+                </li>
+                <li>
+                  <a ng-click="setLang('jp')" class="grey-text text-darken-1">
+                    <i class="flag-icon flag-icon-jp"></i> Japan</a>
+                </li>
+                <li>
+                  <a ng-click="setLang('de')" class="grey-text text-darken-1">
+                    <i class="flag-icon flag-icon-de"></i> German</a>
+                </li>
+                <li>
+                  <a ng-click="setLang('ko')" class="grey-text text-darken-1">
+                    <i class="flag-icon flag-icon-kr"></i> Korean</a>
+                </li>
+                <li>
+                  <a ng-click="setLang('fr')" class="grey-text text-darken-1">
+                    <i class="flag-icon flag-icon-fr"></i> French</a>
+                </li>
+                <li>
+                  <a ng-click="setLang('es')" class="grey-text text-darken-1">
+                    <i class="flag-icon flag-icon-es"></i> Spain</a>
+                </li>
+                <li>
+                  <a ng-click="setLang('it')" class="grey-text text-darken-1">
+                    <i class="flag-icon flag-icon-it"></i> Italy</a>
+                </li>
+                <li>
+                  <a ng-click="setLang('ru')" class="grey-text text-darken-1">
+                    <i class="flag-icon flag-icon-ru"></i> Russia</a>
+                </li>
+              </ul>
+              <!-- notifications-dropdown -->
+              <ul id="notifications-dropdown" class="dropdown-content">
+                <li>
+                  <h6>NOTIFICATIONS
+                    <span class="new badge blue">7</span>
+                  </h6>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#!" class="grey-text text-darken-2">
+                    <span class="material-icons icon-bg-circle cyan small">add_shopping_cart</span> A new order has been placed!</a>
+                  <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">2 hours ago</time>
+                </li>
+                <li>
+                  <a href="#!" class="grey-text text-darken-2">
+                    <span class="material-icons icon-bg-circle red small">stars</span> Completed the task</a>
+                  <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">3 days ago</time>
+                </li>
+                <li>
+                  <a href="#!" class="grey-text text-darken-2">
+                    <span class="material-icons icon-bg-circle teal small">settings</span> Settings updated</a>
+                  <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">4 days ago</time>
+                </li>
+                <li>
+                  <a href="#!" class="grey-text text-darken-2">
+                    <span class="material-icons icon-bg-circle deep-orange small">today</span> Director meeting started</a>
+                  <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">6 days ago</time>
+                </li>
+                <li>
+                  <a href="#!" class="grey-text text-darken-2">
+                    <span class="material-icons icon-bg-circle amber small">trending_up</span> Generate monthly report</a>
+                  <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
+                </li>
+                <li>
+                  <a href="#!" class="grey-text text-darken-2">
+                    <span class="material-icons icon-bg-circle amber small">trending_up</span> Generate monthly report</a>
+                  <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
+                </li>
+                <li>
+                  <a href="#!" class="grey-text text-darken-2">
+                    <span class="material-icons icon-bg-circle amber small">trending_up</span> Generate monthly report</a>
+                  <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
+                </li>
+              </ul>
+              <!-- profile-dropdown -->
+              <ul id="profile-dropdown" class="dropdown-content">
+                <li>
+                  <a href="#" class="grey-text text-darken-1">
+                    <i class="material-icons">face</i> Profile</a>
+                </li>
+                <li>
+                  <a href="#" class="grey-text text-darken-1">
+                    <i class="material-icons">settings</i> Settings</a>
+                </li>
+                <li>
+                  <a href="#" class="grey-text text-darken-1">
+                    <i class="material-icons">live_help</i> Help</a>
+                </li>
+                <li class="divider"></li>
+                <li>
+                  <a href="#" class="grey-text text-darken-1">
+                    <i class="material-icons">lock_outline</i> Lock</a>
+                </li>
+                <li>
+                  <a href="#" class="grey-text text-darken-1">
+                    <i class="material-icons">keyboard_tab</i> Logout</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    
+
+          
+        
+      </header>
+      
+
+      <!-- START WRAPPER -->
+      <div class="wrapper">
+        <!-- START LEFT SIDEBAR NAV-->
+        <aside id="left-sidebar-nav">
+          <ul id="slide-out" class="side-nav fixed leftside-navigation" style="top:0px;">
+            <li class="user-details cyan darken-2">
+              <div class="row">
+                <div class="col col s4 m4 l4">
+                  <img src="images/avatar/avatar-17.png" alt="" class="circle responsive-img valign profile-image cyan">
+                  <img src="images/avatar/avatar-14.png" alt="" class="circle responsive-img valign profile-image cyan">
+                  <img src="images/avatar/avatar-15.png" alt="" class="circle responsive-img valign profile-image cyan">
+                  <img src="images/avatar/avatar-16.png" alt="" class="circle responsive-img valign profile-image cyan">
+                </div>
+                <div class="col col s8 m8 l8">
+                  <ul id="profile-dropdown-nav" class="dropdown-content">
+                    <li>
+                      <a href="#" class="grey-text text-darken-1">
+                        <i class="material-icons">face</i> Profile</a>
+                    </li>
+                    <li>
+                      <a href="#" class="grey-text text-darken-1">
+                        <i class="material-icons">settings</i> Settings</a>
+                    </li>
+                    <li>
+                      <a href="#" class="grey-text text-darken-1">
+                        <i class="material-icons">live_help</i> Help</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <a href="#" class="grey-text text-darken-1">
+                        <i class="material-icons">lock_outline</i> Lock</a>
+                    </li>
+                    <li>
+                      <a href="#" class="grey-text text-darken-1">
+                        <i class="material-icons">keyboard_tab</i> Logout</a>
+                    </li>
+                  </ul>
+                  <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav">Utkarsh Vashisth<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                  <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav" style=" top:30px;">Vaibhav Rakheja<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                  <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav" style=" top:55px;">Prem Raheja<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                  <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown-nav" style=" top:75px;">Jatin Dawar<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                </div>
+              </div>
+            </li>
+            <li class="no-padding">
+              <ul class="collapsible" data-collapsible="accordion">
+                <li class="bold">
+                  <a href="#/" class="waves-effect waves-cyan">
+                      <i class="material-icons">pie_chart_outlined</i>
+                      <span class="nav-text">Dashboard</span>
+                    </a>
+                </li>
+                
+                
+                <li class="bold">
+                  <div class="collapsible-header"><a class="waves-effect waves-cyan">
+                      <i class="material-icons">cast</i>
+                      <span class="nav-text">Analytics</span>
+                    </a></div>
+                    <div class="collapsible-body">
+                    <ul>
+                      <li class="bold">
+                    <a href="#/stackedBar" class="waves-effect waves-cyan">
+                        <i class="material-icons">pie_chart_outlined</i>
+                        <span class="nav-text">Stacked Bar Chart</span>
+                        </a>
+                    </li>
+                    <li class="bold">
+                    <a href="#/lineProcess" class="waves-effect waves-cyan">
+                        <i class="material-icons">pie_chart_outlined</i>
+                        <span class="nav-text">Line Process Chart</span>
+                        </a>
+                    </li>
+                    <li class="bold">
+                    <a href="#/aniPie" class="waves-effect waves-cyan">
+                        <i class="material-icons">pie_chart_outlined</i>
+                        <span class="nav-text">Animated Pie Chart</span>
+                        </a>
+                    </li>
+                    <li class="bold">
+                    <a href="#/drilldowntm" class="waves-effect waves-cyan">
+                        <i class="material-icons">pie_chart_outlined</i>
+                        <span class="nav-text">Drill Down Tree Map</span>
+                        </a>
+                    </li>
+                    <li class="bold">
+                    <a href="#/forcedirect" class="waves-effect waves-cyan">
+                        <i class="material-icons">pie_chart_outlined</i>
+                        <span class="nav-text">Force Directed Graph</span>
+                        </a>
+                    </li>
+                    <li class="bold">
+                    <a href="#/sky" class="waves-effect waves-cyan">
+                        <i class="material-icons">pie_chart_outlined</i>
+                        <span class="nav-text">Sankey Graph</span>
+                        </a>
+                    </li>
+                    <li class="bold">
+                    <a href="#/picstacked" class="waves-effect waves-cyan">
+                        <i class="material-icons">pie_chart_outlined</i>
+                        <span class="nav-text">Pictorial Stacked Chart </span>
+                        </a>
+                    </li>
+                    <li class="bold">
+                    <a href="#/barchartrace" class="waves-effect waves-cyan">
+                        <i class="material-icons">pie_chart_outlined</i>
+                        <span class="nav-text">Bar Chart Race </span>
+                        </a>
+                    </li>
+                    </ul>
+                  </div>
+                  </li>
+                    
+                
+                <li class="bold">
+                  <a class="modal-trigger waves-effect waves-light" href="#modal1">
+
+                    <i class="material-icons left">brightness_4</i>Set Date Range</a>
+                  </li>
+
+                <!-- <li>
+                  <a class="btn waves-effect waves-light gradient-45deg-red-pink" href="https://pixinvent.com/materialize-material-design-admin-template/landing/" target="_blank">
+                    <i class="material-icons white-text">file_upload</i>Upgrade to Pro!
+                  </a>
+                </li> -->
+
+              </ul>
+            </li>
+          </ul>
+          <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+        </aside>
+      </div>
+      <!--End Left Sidebar-->
+
+
+
+      <!-- Modals-->
+
+     
+
+        <div id="modal1" class="modal" style="height: 200px;">
+          <div class="modal-content">
+            <h4>Please Select Year Range</h4>
+            <div class="row" style="height: 50%;">
+              <div class="col s3 m3 l3">
+                <input class="datepicker" id="fromDate">
+                  <div class="row">
+                    <div class="col s6 m6 l6">
+                      <i class="fas fa-chevron-left"></i>
+                    </div>
+                  <div class="col s6 m6 l6">From Year</div></div>
+                </input>
+              </div>
+              <div class="col s3 m3 l3">
+                <input class="datepicker" id="toDate">
+                  <div class="row">
+                    <div class="col s6 m6 l6">
+                      <i class="fas fa-chevron-right"></i>
+                    </div>
+                  <div class="col s6 m6 l6">To Year</div></div>
+                  </input>
+              </div>
+            </div>
+          </div>
+          <div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+          
+          <div class="modal-footer">
+            <a ng-click="setRange()" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+          </div>
+        </div>
+      
+
+      <!--Modals end  -->
+
+
+
+        
+				<div ng-view id="ngview"></div>
+			</div> 		
+		
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="vendors/jquery-3.2.1.min.js"></script>
+    <!--Plotly.js-->
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <!--materialize js-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!--scrollbar-->
+    <script type="text/javascript" src="vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <!--custom-script.js - Add your own theme custom JS-->
+    <script type="text/javascript" src="js/custom-script.js"></script>
+    <script src="https://kit.fontawesome.com/9577623a4d.js" crossorigin="anonymous"></script>
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://www.amcharts.com/lib/4/plugins/wordCloud.js"></script>
+    <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.5/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script src="https://www.amcharts.com/lib/4/plugins/forceDirected.js"></script>
+    <script src="https://www.amcharts.com/lib/4/plugins/timeline.js"></script>
+    <script src="https://www.amcharts.com/lib/4/plugins/bullets.js"></script>
+
+
+    
+		<script>
+		angular.module('APP',[]).
+		config(function($routeProvider){
+			$routeProvider.
+			when('/',{templateUrl:'partials/directory.html',controller:'directoryController'}).
+      when('/inde',{templateUrl:'index1.html', controller:'indeController'}).
+      when('/globe',{templateUrl:'globe/index.html', controller:'globeController'}).
+      when('/wordcloud',{templateUrl:'partials/WordCloud.html', controller:'wordcloudController'}).
+      when('/connectedgraph',{templateUrl:'partials/ConnectedGraph.html', controller:'connectedgraphController'}).
+      when('/dashboardcards',{templateUrl:'partials/DashboardCards.html', controller:'dcController'}).
+      when('/bubblechart',{templateUrl:'partials/BubbleChart.html', controller:'bubbleController'}).
+      when('/barchart',{templateUrl:'partials/ClusteredBarChart.html', controller:'bargraphController'}).
+			when('/view/:id',{templateUrl:'partials/view.html',controller:'viewController'}).
+      when('/stackedBar',{templateUrl:'partials/StackedBar.html', controller:'stackedBarController'}).
+      when('/lineProcess',{templateUrl:'partials/LPChart.html', controller:'lpController'}).
+      when('/aniPie',{templateUrl:'partials/AniPieChart.html', controller:'aniPieController'}).
+      when('/drilldowntm',{templateUrl:'partials/DrillDownTreeMap.html', controller:'ddtmController'}).
+      when('/forcedirect',{templateUrl:'partials/ForceDirectedGraph.html', controller:'fdgController'}).
+      when('/sky',{templateUrl:'partials/Sankey.html', controller:'skyController'}).
+      when('/picstacked',{templateUrl:'partials/PictorialStackedChart.html', controller:'dicpicController'}).
+      when('/barchartrace',{templateUrl:'partials/BarChartRace.html', controller:'bcrController'}).
+
+
+
+
+
+			otherwise({redirectTo:'/'})
+		}).
+    controller('mainController',['$scope','$http',function($scope,$http){
+      $scope.StartYear = '2005';
+      $scope.EndYear = '2014';
+      $scope.EndMonth = '12';
+      $scope.StartMonth = '01';
+
+      $scope.Lang = 'all';
+
+      angular.element(document).ready(function () {
+          document.addEventListener('DOMContentLoaded', function() {
+             // var elems = document.querySelectorAll('.datepicker');
+             // var instances = M.Datepicker.init(elems, options);
+            // $(".datepicker").datepicker({
+              //
+              //defaultDate: new Date(currYear-5,1,31),
+              // setDefaultDate: new Date(2000,01,31),
+              //maxDate: new Date(currYear-5,12,31),
+              //yearRange: [1928, currYear-5],
+              //format: "yyyy/mm/dd"    
+            //});
+              
+            
+            });
+          $('.datepicker').on('mousedown',function(event){ event.preventDefault(); });
+ });
+
+      $scope.setRange = function()
+                {
+                  var fromDate = document.getElementById("fromDate").value;
+                  var fromDateRes = fromDate.split(" ");
+                  //console.log(res);
+                  $scope.StartMonth =  CovertDate(fromDateRes[1]);
+                  $scope.StartYear = fromDateRes[2];
+                  StartYear = fromDateRes[2];
+                  console.log($scope.StartYear);
+                  var toDate =  document.getElementById("toDate").value;
+                  var toDateRes = toDate.split(" ");
+                  $scope.EndYear = toDateRes[2];
+                  $scope.EndMonth = CovertDate(toDateRes[1]);
+                  EndYear = toDateRes[2];
+                  console.log($scope.EndYear);
+                  return;
+                }
+
+                $scope.setLang = function(lang)
+                {
+                  $scope.Lang= lang;
+
+                }
+
+                function CovertDate(month)
+                {
+                  console.log(month);
+                  switch(month)
+                  {
+                    case 'January,' : 
+                          return '01';
+                          break;
+                       case 'Feburary,' : 
+                          return '02';
+                          break;
+                       case 'March,' : 
+                         return '03';
+                          break;
+                       case 'April,' : 
+                          return '04';
+                          break;
+                       case 'May,' : 
+                          return '05';
+                          break;
+                       case 'June,' : 
+                          return '06';
+                          break;
+                       case 'July,' : 
+                          return '07';
+                          break;
+                       case 'August,' : 
+                          return '08';
+                          break;
+                        case 'September,' : 
+                        return '09';
+                        break;
+                       case 'October' : 
+                        return '10';
+                        break;
+                       case 'November,' : 
+                          return '11';
+                          break;
+                       case 'December,' : 
+                          return '12';
+                          break;
+                  }
+                }
+
+
+
+
+    }]).
+		controller('directoryController',['$scope','$http',function($scope,$http){
+      $('.modal').modal();
+      $scope.directors;
+      $scope.chartDataMan;
+              
+               
+
+                  
+		}]).
+		controller('viewController',['$scope','$routeParams',function($scope,$routeParams){
+      //$scope.person=$scope.people[$routeParams.id]
+      
+      document.getElementById("navbar").style.height = "10%";
+		}]).
+
+
+    controller('stackedBarController',['$scope','$http','$routeParams',function($scope,$http,$routeParams){
+      //$scope.person=$scope.people[$routeParams.id]
+
+      
+      $http.get('http://192.168.0.22:8000/fatalities').success(function(data){
+                //$scope.people=data
+                console.log(data['result']);
+                $scope.sbcChart=data['result'];
+
+                          
+
+
+          // Themes begin
+          am4core.useTheme(am4themes_animated);
+          // Themes end
+
+          // Create chart instance
+          var chart = am4core.create("stackedBar", am4charts.XYChart);
+
+          // Add data
+          chart.data =$scope.sbcChart ;
+
+          // Create axes
+          var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+          categoryAxis.dataFields.category = "week_day";
+          categoryAxis.title.text = "Week Day";
+          categoryAxis.renderer.grid.template.location = 0;
+          categoryAxis.renderer.minGridDistance = 20;
+          categoryAxis.renderer.cellStartLocation = 0.1;
+          categoryAxis.renderer.cellEndLocation = 0.9;
+
+          var  valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+          valueAxis.min = 0;
+          valueAxis.title.text = "No of accidents";
+
+          // Create series
+          function createSeries(field, name, stacked) {
+            var series = chart.series.push(new am4charts.ColumnSeries());
+            series.dataFields.valueY = field;
+            series.dataFields.categoryX = "week_day";
+            series.name = name;
+            series.columns.template.tooltipText = "{name}: [bold]{valueY}[/]";
+            series.stacked = stacked;
+            series.columns.template.width = am4core.percent(95);
+          }
+
+          createSeries("Non fatality", "Non Fatality", true);
+          createSeries("Fatality", "Fatality", false);
+ 
+
+          // Add legend
+          chart.legend = new am4charts.Legend();    });
+
+
+    }]).
+
+
+
+
+
+
+
+
+
+
+
+    controller('bcrController',['$scope','$http','$routeParams',function($scope,$http,$routeParams){
+      //$scope.person=$scope.people[$routeParams.id]
+
+      
+      $http.get('http://192.168.0.22:8000/week?startyear='+$scope.StartYear+'&endyear='+$scope.EndYear+'&endmonth='+$scope.EndMonth+'&startmonth='+$scope.StartMonth).success(function(data){
+                //$scope.people=data
+                console.log(data['result']);
+                $scope.bcrChart=data['result'];
+
+                          
+
+          // Themes begin
+          am4core.useTheme(am4themes_animated);
+          // Themes end
+
+
+
+          var chart = am4core.create("bcr", am4charts.XYChart);
+          chart.padding(40, 40, 40, 40);
+
+          chart.numberFormatter.bigNumberPrefixes = [
+            { "number": 1e+3, "suffix": "K" },
+            { "number": 1e+6, "suffix": "M" },
+            { "number": 1e+9, "suffix": "B" }
+          ];
+
+          var label = chart.plotContainer.createChild(am4core.Label);
+          label.x = am4core.percent(97);
+          label.y = am4core.percent(95);
+          label.horizontalCenter = "right";
+          label.verticalCenter = "middle";
+          label.dx = -15;
+          label.fontSize = 50;
+
+          var playButton = chart.plotContainer.createChild(am4core.PlayButton);
+          playButton.x = am4core.percent(97);
+          playButton.y = am4core.percent(95);
+          playButton.dy = -2;
+          playButton.verticalCenter = "middle";
+          playButton.events.on("toggled", function(event) {
+            if (event.target.isActive) {
+              play();
+            }
+            else {
+              stop();
+            }
+          })
+
+          var stepDuration = 4000;
+
+          var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+          categoryAxis.renderer.grid.template.location = 0;
+          categoryAxis.dataFields.category = "network";
+          categoryAxis.renderer.minGridDistance = 1;
+          categoryAxis.renderer.inversed = true;
+          categoryAxis.renderer.grid.template.disabled = true;
+
+          var valueAxis = chart.xAxes.push(new am4charts.ValueAxis());
+          valueAxis.min = 0;
+          valueAxis.rangeChangeEasing = am4core.ease.linear;
+          valueAxis.rangeChangeDuration = stepDuration;
+          valueAxis.extraMax = 0.1;
+          var series = chart.series.push(new am4charts.ColumnSeries());
+          series.dataFields.categoryY = "network";
+          series.dataFields.valueX = "MAU";
+          series.tooltipText = "{valueX.value}"
+          series.columns.template.strokeOpacity = 0;
+          series.columns.template.column.cornerRadiusBottomRight = 5;
+          series.columns.template.column.cornerRadiusTopRight = 5;
+          series.interpolationDuration = stepDuration;
+          series.interpolationEasing = am4core.ease.linear;
+
+          var labelBullet = series.bullets.push(new am4charts.LabelBullet())
+          labelBullet.label.horizontalCenter = "right";
+          labelBullet.label.text = "{values.valueX.workingValue.formatNumber('#.0as')}";
+          labelBullet.label.textAlign = "end";
+          labelBullet.label.dx = -10;
+
+          chart.zoomOutButton.disabled = true;
+
+          // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
+          series.columns.template.adapter.add("fill", function(fill, target){
+            return chart.colors.getIndex(target.dataItem.index);
+          });
+
+          var year = $scope.StartYear;
+          label.text = year.toString();
+
+          var interval;
+
+          function play() {
+            interval = setInterval(function(){
+              nextYear();
+            }, stepDuration)
+            nextYear();
+          }
+
+          function stop() {
+            if (interval) {
+              clearInterval(interval);
+            }
+          }
+
+          function nextYear() {
+            
+            
+            if (year >= $scope.EndYear) {
+              year = $scope.StartYear;
+            }
+            year++
+            console.log(year);
+            var newData = allData[year];
+            var itemsWithNonZero = 0;
+            for (var i = 0; i < chart.data.length; i++) {
+              try{
+              chart.data[i].MAU = newData[i].MAU;}
+              catch(err){
+                chart.data[i].MAU =0
+              }
+              if (chart.data[i].MAU > 0) {
+                itemsWithNonZero++;
+              }
+            }
+
+            if (year == $scope.StartYear) {
+              series.interpolationDuration = stepDuration / 4;
+              valueAxis.rangeChangeDuration = stepDuration / 4;
+            }
+            else {
+              series.interpolationDuration = stepDuration;
+              valueAxis.rangeChangeDuration = stepDuration;
+            }
+
+            chart.invalidateRawData();
+            label.text = year.toString();
+
+            categoryAxis.zoom({ start: 0, end: itemsWithNonZero / categoryAxis.dataItems.length });
+          }
+
+
+          categoryAxis.sortBySeries = series;
+
+          var allData = $scope.bcrChart;
+
+          chart.data = JSON.parse(JSON.stringify(allData[year]));
+          categoryAxis.zoom({ start: 0, end: 1 / chart.data.length });
+
+          series.events.on("inited", function() {
+            setTimeout(function() {
+              playButton.isActive = true; // this starts interval
+            }, 2000)
+          })
+    });
+
+
+    }]).
+
+
+
+
+    controller('dicpicController',['$scope','$http','$routeParams',function($scope,$http,$routeParams){
+      //$scope.person=$scope.people[$routeParams.id]
+
+      
+     
+
+                            
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        //var iconPath = "M53.5,476c0,14,6.833,21,20.5,21s20.5-7,20.5-21V287h21v189c0,14,6.834,21,20.5,21 c13.667,0,20.5-7,20.5-21V154h10v116c0,7.334,2.5,12.667,7.5,16s10.167,3.333,15.5,0s8-8.667,8-16V145c0-13.334-4.5-23.667-13.5-31 s-21.5-11-37.5-11h-82c-15.333,0-27.833,3.333-37.5,10s-14.5,17-14.5,31v133c0,6,2.667,10.333,8,13s10.5,2.667,15.5,0s7.5-7,7.5-13 V154h10V476 M61.5,42.5c0,11.667,4.167,21.667,12.5,30S92.333,85,104,85s21.667-4.167,30-12.5S146.5,54,146.5,42 c0-11.335-4.167-21.168-12.5-29.5C125.667,4.167,115.667,0,104,0S82.333,4.167,74,12.5S61.5,30.833,61.5,42.5z"
+        if(angular.element('#mySwitch').prop('checked'))
+                  {
+                    createChart('F',"m223.11 83.584c0.368-0.287 0.647-0.631 0.863-1.013-1.249 1.266-2.045 1.831-0.863 1.013zm212.43 659.64c-5.026-9.68-18.061-16.806-17.862-36 0.186-19.168-5.621-63.408-5.807-64.817-0.206-1.344-6.044-39.721-13.837-52.557-7.85-12.799-18.88-37.114-18.88-37.114s-8.419-37.172-9.238-54.971c-0.788-17.792-1.198-42.889-1.198-42.889l6.634-0.385s-10.025-52.563-16.87-62.64c-6.786-10.064-8.81-40.729-8.42-54.121 0.404-13.468 1.429-30.838 1.429-30.838s49.547-27.672 52.345-34.55c2.793-6.953-1.019-46.878-1.019-49.642 0-2.726-14.251-63.792-15.225-66.59-1.005-2.74-6.806-17.988-8.648-21.746-1.806-3.77-9.412-12.842-21.243-12.267 0 0 7.626-1.532 12.216 1.032 4.635 2.56-5.614-4.361-9.604-4.744-4.009-0.406-4.206-1.985-6.05-3.157 0 0 9.653 2.75 11.255 3.739 1.62 0.957-3.021-18.39-9.411-23.53 0 0 7.395 5.333 9.021 11.258 0 0 0.199-6.309-5.441-13.229-5.603-6.915-7.99-8.68-10.193-13.22 0 0 8.406-3.753 14.24 7.883 5.799 11.649 4.001 8.498 7.604 11.267 3.611 2.779-3.208-3.567-4.199-8.298-1.019-4.749-7.83-15.629-13.055-17.212-5.206-1.549-7.816-6.308-12.031-15.936 0 0 2.012-1.424 5.615 5.667 3.6 7.122 10.033 11.288 13.228 13.066 3.222 1.747-7.209-7.708-12.427-18.007-5.237-10.234-9.808-6.503-12.855-10.883-3.01-4.323-17.242-45.413-49.536-30.814 0 0-23.067-8.882-36.111 5.346-13.016 14.249-9.208 23.919-13.438 24.321-4.208 0.373-10.618-0.632-14.633 2.362-3.994 2.955-4.38 7.518-4.38 7.518s2.356-2.769 7.185-5.343c4.831-2.557 10.034-0.195 12.846-1.769 0 0-3.824 8.125-6.233 9.262-2.398 1.191-6.801 2.598-6.993 10.298-0.165 6.566 0.935 11.271-0.346 13.597 1.521-1.522 3.72-4.186 3.955-6.888 0 0 0.986 10.282-1.235 12.052-2.182 1.789-8.021 4.725-8.414 6.715-0.379 2.008 5.425 4.347 6.419 7.891 0.837 3.022 2.387-2.009 1.913-5.471 1.076 2.803 2.783 7.292 2.303 8.23-0.783 1.593-2.612 5.75-3.197 6.729-0.601 1.015 0.397-1.937-2.216 7.328-2.614 9.317-1.607 11.66 1.824 6.123 3.398-5.53 1.369-10.647 4.592-14.827 3.226-4.151 7.032-8.896 4.817-0.976-2.205 7.881-5.613 17.753-9.238 20.345-3.601 2.584-1.595 5.519-0.983 6.926 0.604 1.348 6.012-7.135 8.017-11.468 1.989-4.344 0 10.453-3.409 12.815-3.403 2.42-11.22 0.833-11.032 5.549 0.192 4.754 3.806 6.145 5.191 6.145 1.42 0-3.187-2.969-0.585-5.925 2.631-2.986 8.829-2.603 11.027-6.926 2.223-4.352 2.029 2.172 0.796 4.171-1.194 1.941-1.194 3.932-4.187 6.094-3.018 2.151 3.614 2.793 7.612-0.382 0 0-3.998 6.729-20.838 14.247-16.88 7.465-22.693 40.109-22.693 40.109s-8.812 36.74-15.454 42.85c0 0-8.221 6.964-13.244 55.144 0 0-1.175 4.535 6.251 6.936 0 0 33.69 19.962 39.532 20.937 0 0-18.483 61.025-28.299 80.806-9.836 19.79-10.25 34.368-10.25 34.368l21.29 3.015s8.196 68.352 6.414 93.858c-1.807 25.475-5.034 41.487-6.414 46.052-1.428 4.533-7.672 28.215-3.854 52.327 3.854 24.137 4.637 52.383 5.439 58.684 0.795 6.325 4.011 25.699 3.595 35.398-0.373 9.698-3.595 15.038-6.402 19.38-2.83 4.333-2.83 18.938-2.83 18.938s-1.783 34.009 1.228 38.522c3 4.572 21.856 9.726 27.692 8.118 5.817-1.588 13.215-7.867 13.822-13.016 0.591-5.134-5.84-17.235-5.613-28.285 0.193-11.057-0.391-28.465-0.391-30.418 0-2.01-2.835-10.685-2.41-21.742 0.41-11.083 6.21-44.055 11.824-67.596 5.613-23.464 4.421-57.877 4.619-60.252 0.194-2.369 0.194-7.504 7.419-28.638 7.233-21.135 8.022-47.64 9.217-51.001 1.215-3.329 11.026-57.108 11.026-57.108l21.27 0.794s24.675 78.851 28.106 84.389c3.374 5.52 8.797 23.112 24.463 46.641 0 0 4.987 6.915 15.846 45.021 10.826 38.126 18.638 37.748 28.285 65.617 9.624 27.856 7.018 54.528 7.018 54.528s-2.407 23.747-12.458 34.982c-9.981 11.275-12.019 19.194-9.981 20.386 1.958 1.185 50.917 6.492 55.719-13.65 4.84-20.168 2.228-24.123 4.424-29.443 2.197-5.353 9.202-14.82 4.227-24.495zm-70.625-525.67 8.816 36.348-12.017 8.129 3.201-44.477zm-138.8 82.213-23.681-16.587 28.288-75.086c-7.442 36.167 10.823 46.038 10.823 46.038l1.819 8.925c2.597 18.918-17.249 36.71-17.249 36.71z");
+                  }
+                  else
+                  {
+                    createChart('M',"M328.218,95.273c-1.134,9.06-4.65,17.555-4.968,28.286  c7.38,4.546,12.769,12.21,19.876,16.836c5.624,3.664,22.924,9.147,29.812,11.479c9.042,3.022,25.309,3.666,29.827,10.68  c1.306,2.107,0.625,3.879,1.642,6.157c5.818,12.741,10.126,30.119,14.08,44.347c0.564,5.352,1.129,10.707,1.687,16.042  c5.868,22.291,7.54,48.003,13.221,71.889c2.597,10.9,0.042,23.092,2.481,33.632c2.063,8.707-0.634,19.854-0.805,27.578  c-0.551,23.882-0.991,44.771-0.86,67.295c-3.187,1.08-4.417,0.706-4.944,4.562c2.237,2.916,6.75,23.853,4.128,30.626  c-0.759,1.997-3.915,2.89-4.957,4.563c-5.868,9.287-14.915,22.622-28.973,23.703c0.36-5.313,2.96-7.145,4.15-11.461  c1.901-7.228-0.538-17.585-2.529-22.201c-0.81-0.231-1.621-0.466-2.477-0.748c0,0.282,0,0.517,0,0.748  c-4.788,7.725,0.361,18.83-11.571,19.895c-0.184-10.024,0.539-29.007,3.288-37.46c1.132-3.476,3.403-6.708,4.152-10.687  c-0.559,0-1.109,0-1.646,0c-1.539-0.955-4.718-0.834-7.469-0.793c-2.141,2.813-2.635,5.228-2.508,10.725  c-8.974,10.485-6.946,40.716-5.771,59.646c0.25,3.815,2.938,7.854,1.67,12.25c-0.679,2.227-3.521,4.859-4.151,6.858  c0.27,8.683,0.533,17.325,0.837,26.033c0.044,5.236,3.72,9.736,1.645,15.3c-0.452,1.147-2.797,2.104-3.324,3.014  c-1.545,2.816-0.36,6.986-0.823,9.176c-1.635,7.917,3.605,12.581,0.823,20.68c-5.595,16.388-9.67,34.34-15.722,51.219  c-1.394,3.836-4.645,7.75-5.811,11.507c-3.638,11.667,2.884,23.916-0.817,34.414c-2.529,7.203-8.938,7.331-9.111,17.578  c11.231,13.84-3.116,40.876-8.258,52c-2.827,5.957-2.529,10.582-11.628,10.716c-2.272-1.592-5.888-1.592-9.943-1.547  c-1.692,3.086-3.254,8.244-4.15,9.918c-0.814,0.535-1.635,1.077-2.462,1.622c-1.194,3.123,2.684,10.038,0.827,14.461  c-0.381,0.916-2.973,2.708-3.309,3.83c0.291,1.287,0.517,2.583,0.793,3.831c-0.14,0.918-1.313,3.209-1.604,4.582  c-10.922,6.254-49.431,13.003-50.563-5.323c2.87-2.592,2.934-5.672,4.99-9.214c4.628-7.997,8.639-8.923,5.792-20.621  c0.281-4.588,0.573-9.176,0.817-13.751c-1.557-4.543-6.366-6.584-7.449-12.259c1.328-1.031,0.951-0.497,1.673-2.328  c-8.798-5.672-5.531-16.745-9.118-27.496c-3.426-10.336-3.836-24.375-6.635-35.962c-0.265-6.084-0.536-12.248-0.833-18.332  c-2.415-9.876-1.669-22.496-4.124-32.914c-0.277-5.589-0.564-11.214-0.813-16.837c-3.384-10.672-7.805-18.193-10.792-30.573  c-0.264-11.222-0.535-22.436-0.829-33.623c0.293-1.353,1.542-5.123,0.829-7.665c-3.963-14.539-6.397-34.64-10.753-49.706  c-2.604-8.96,0.158-20.766-2.508-29.854c-2.39-8.295-6.11-15.439-9.925-22.146c-2.616-4.661-3.024-12.243-9.927-13.038  c-2.729,1.518-9.07-0.461-13.266-0.727c0.049-29.197-10.558-49.671-16.562-74.217c-0.56-10.183-1.127-20.408-1.669-30.574  c-3.517-15.004-0.361-28.857,3.343-42.834c4.595-17.464,5.185-35.247,9.898-52.002c0.574-4.621,1.11-9.167,1.673-13.768  c3.726-13.065,8.257-34.4,15.77-44.358c6.679-8.913,23.459-8.807,34.745-13.788c7.179-3.147,16.035-5.336,23.19-9.148  c6.075-3.247,12.844-12.932,18.253-17.625c0.158-14.229-3.45-22.42-4.171-34.394c-2.217,0-4.421,0-6.61,0  c-0.817-1.347-1.036-1.293-1.673-3.058c-3.942-4.567-2.371-15.294-0.833-20.648c3.702-1.017,5.327-0.127,5.795-4.601  c-2.857-4.09-0.469-15.835,0.86-19.105c5.027-12.583,17.87-23.527,34.767-24.478c21.072-1.184,37.005,13.273,40.607,29.06  c-0.849,6.625-1.669,13.269-2.474,19.935c5.119,1.543,7.509,2.734,8.258,8.397C337.515,85.25,340.759,95.333,328.218,95.273z   M374.604,265.808c-10.822,22.434-1.927,69.539,3.296,91.037c0,3.336,0,6.585,0,9.939c2.325,9.604,3.066,19.687,6.629,27.528  c0.835,0.285,1.672,0.517,2.509,0.758c0-0.242,0-0.474,0-0.758c0.659-0.901,0.608-1.296,0.805-3.028  c-3.518-5.516,0.88-16.75-0.805-23.749c-0.767-3.059-1.699-8.848-2.509-12.251c0-7.37,0-14.75,0-22.125  c-3.116-13.289-2.712-28.332-5.773-41.31c-1.9-7.939,2.028-19.773-2.484-25.27C375.409,265.97,376.023,266.271,374.604,265.808z   M219.699,274.202c-1.849,5.234-0.722,11.248-2.458,16.876c-0.837,2.603-3.525,6.5-4.13,9.146  c-1.222,5.19,3.455,10.875,1.648,17.623c-2.146,7.876-5.212,26.708-1.648,36.708c0.542,0,1.084,0,1.648,0c0-0.535,0-1.042,0-1.544  c4.622-6.352,4.399-16.394,6.609-25.244c4.289-17.124,8.756-23.416,2.481-42.059c-1.401-4.238-0.09-7.801-2.481-10.676  C220.527,274.395,221.144,274.718,219.699,274.202z M295.908,509.054c-1.084,1.438-1.084,0.62-1.642,3.045  c-7.385,10.12,2.773,25.705,0,36.722c-3.869,15.247,0.445,28.944,4.128,43.585c-0.271,6.083-0.548,12.24-0.819,18.361  c3.091,14.005,0.674,34.467,4.161,50.461c0.83,0,1.641,0,2.434,0c7.896-12.705,3.789-40.791,8.301-56.582  c0.533-1.869,2.611-18.843,2.497-19.153c-0.329-0.77-2.949-1.004-3.312-1.48c-1.309-1.995,0.385-5.252-0.833-6.933  c-1.172-1.634-4.4-1.612-5.799-3.028c-2.345-2.396-4.968-10.754-5.782-13.809c-2.438-8.773,5.872-14.688,7.443-19.875  c1.001-3.267-7.166-25.959-8.292-30.563C297.575,509.532,296.742,509.298,295.908,509.054z");
+                  }
+       
+       $scope.changeGraph = function()
+       {
+        if(angular.element('#mySwitch').prop('checked'))
+                  {
+                    createChart('F',"m223.11 83.584c0.368-0.287 0.647-0.631 0.863-1.013-1.249 1.266-2.045 1.831-0.863 1.013zm212.43 659.64c-5.026-9.68-18.061-16.806-17.862-36 0.186-19.168-5.621-63.408-5.807-64.817-0.206-1.344-6.044-39.721-13.837-52.557-7.85-12.799-18.88-37.114-18.88-37.114s-8.419-37.172-9.238-54.971c-0.788-17.792-1.198-42.889-1.198-42.889l6.634-0.385s-10.025-52.563-16.87-62.64c-6.786-10.064-8.81-40.729-8.42-54.121 0.404-13.468 1.429-30.838 1.429-30.838s49.547-27.672 52.345-34.55c2.793-6.953-1.019-46.878-1.019-49.642 0-2.726-14.251-63.792-15.225-66.59-1.005-2.74-6.806-17.988-8.648-21.746-1.806-3.77-9.412-12.842-21.243-12.267 0 0 7.626-1.532 12.216 1.032 4.635 2.56-5.614-4.361-9.604-4.744-4.009-0.406-4.206-1.985-6.05-3.157 0 0 9.653 2.75 11.255 3.739 1.62 0.957-3.021-18.39-9.411-23.53 0 0 7.395 5.333 9.021 11.258 0 0 0.199-6.309-5.441-13.229-5.603-6.915-7.99-8.68-10.193-13.22 0 0 8.406-3.753 14.24 7.883 5.799 11.649 4.001 8.498 7.604 11.267 3.611 2.779-3.208-3.567-4.199-8.298-1.019-4.749-7.83-15.629-13.055-17.212-5.206-1.549-7.816-6.308-12.031-15.936 0 0 2.012-1.424 5.615 5.667 3.6 7.122 10.033 11.288 13.228 13.066 3.222 1.747-7.209-7.708-12.427-18.007-5.237-10.234-9.808-6.503-12.855-10.883-3.01-4.323-17.242-45.413-49.536-30.814 0 0-23.067-8.882-36.111 5.346-13.016 14.249-9.208 23.919-13.438 24.321-4.208 0.373-10.618-0.632-14.633 2.362-3.994 2.955-4.38 7.518-4.38 7.518s2.356-2.769 7.185-5.343c4.831-2.557 10.034-0.195 12.846-1.769 0 0-3.824 8.125-6.233 9.262-2.398 1.191-6.801 2.598-6.993 10.298-0.165 6.566 0.935 11.271-0.346 13.597 1.521-1.522 3.72-4.186 3.955-6.888 0 0 0.986 10.282-1.235 12.052-2.182 1.789-8.021 4.725-8.414 6.715-0.379 2.008 5.425 4.347 6.419 7.891 0.837 3.022 2.387-2.009 1.913-5.471 1.076 2.803 2.783 7.292 2.303 8.23-0.783 1.593-2.612 5.75-3.197 6.729-0.601 1.015 0.397-1.937-2.216 7.328-2.614 9.317-1.607 11.66 1.824 6.123 3.398-5.53 1.369-10.647 4.592-14.827 3.226-4.151 7.032-8.896 4.817-0.976-2.205 7.881-5.613 17.753-9.238 20.345-3.601 2.584-1.595 5.519-0.983 6.926 0.604 1.348 6.012-7.135 8.017-11.468 1.989-4.344 0 10.453-3.409 12.815-3.403 2.42-11.22 0.833-11.032 5.549 0.192 4.754 3.806 6.145 5.191 6.145 1.42 0-3.187-2.969-0.585-5.925 2.631-2.986 8.829-2.603 11.027-6.926 2.223-4.352 2.029 2.172 0.796 4.171-1.194 1.941-1.194 3.932-4.187 6.094-3.018 2.151 3.614 2.793 7.612-0.382 0 0-3.998 6.729-20.838 14.247-16.88 7.465-22.693 40.109-22.693 40.109s-8.812 36.74-15.454 42.85c0 0-8.221 6.964-13.244 55.144 0 0-1.175 4.535 6.251 6.936 0 0 33.69 19.962 39.532 20.937 0 0-18.483 61.025-28.299 80.806-9.836 19.79-10.25 34.368-10.25 34.368l21.29 3.015s8.196 68.352 6.414 93.858c-1.807 25.475-5.034 41.487-6.414 46.052-1.428 4.533-7.672 28.215-3.854 52.327 3.854 24.137 4.637 52.383 5.439 58.684 0.795 6.325 4.011 25.699 3.595 35.398-0.373 9.698-3.595 15.038-6.402 19.38-2.83 4.333-2.83 18.938-2.83 18.938s-1.783 34.009 1.228 38.522c3 4.572 21.856 9.726 27.692 8.118 5.817-1.588 13.215-7.867 13.822-13.016 0.591-5.134-5.84-17.235-5.613-28.285 0.193-11.057-0.391-28.465-0.391-30.418 0-2.01-2.835-10.685-2.41-21.742 0.41-11.083 6.21-44.055 11.824-67.596 5.613-23.464 4.421-57.877 4.619-60.252 0.194-2.369 0.194-7.504 7.419-28.638 7.233-21.135 8.022-47.64 9.217-51.001 1.215-3.329 11.026-57.108 11.026-57.108l21.27 0.794s24.675 78.851 28.106 84.389c3.374 5.52 8.797 23.112 24.463 46.641 0 0 4.987 6.915 15.846 45.021 10.826 38.126 18.638 37.748 28.285 65.617 9.624 27.856 7.018 54.528 7.018 54.528s-2.407 23.747-12.458 34.982c-9.981 11.275-12.019 19.194-9.981 20.386 1.958 1.185 50.917 6.492 55.719-13.65 4.84-20.168 2.228-24.123 4.424-29.443 2.197-5.353 9.202-14.82 4.227-24.495zm-70.625-525.67 8.816 36.348-12.017 8.129 3.201-44.477zm-138.8 82.213-23.681-16.587 28.288-75.086c-7.442 36.167 10.823 46.038 10.823 46.038l1.819 8.925c2.597 18.918-17.249 36.71-17.249 36.71z");
+                  }
+                  else
+                  {
+                    createChart('M',"M328.218,95.273c-1.134,9.06-4.65,17.555-4.968,28.286  c7.38,4.546,12.769,12.21,19.876,16.836c5.624,3.664,22.924,9.147,29.812,11.479c9.042,3.022,25.309,3.666,29.827,10.68  c1.306,2.107,0.625,3.879,1.642,6.157c5.818,12.741,10.126,30.119,14.08,44.347c0.564,5.352,1.129,10.707,1.687,16.042  c5.868,22.291,7.54,48.003,13.221,71.889c2.597,10.9,0.042,23.092,2.481,33.632c2.063,8.707-0.634,19.854-0.805,27.578  c-0.551,23.882-0.991,44.771-0.86,67.295c-3.187,1.08-4.417,0.706-4.944,4.562c2.237,2.916,6.75,23.853,4.128,30.626  c-0.759,1.997-3.915,2.89-4.957,4.563c-5.868,9.287-14.915,22.622-28.973,23.703c0.36-5.313,2.96-7.145,4.15-11.461  c1.901-7.228-0.538-17.585-2.529-22.201c-0.81-0.231-1.621-0.466-2.477-0.748c0,0.282,0,0.517,0,0.748  c-4.788,7.725,0.361,18.83-11.571,19.895c-0.184-10.024,0.539-29.007,3.288-37.46c1.132-3.476,3.403-6.708,4.152-10.687  c-0.559,0-1.109,0-1.646,0c-1.539-0.955-4.718-0.834-7.469-0.793c-2.141,2.813-2.635,5.228-2.508,10.725  c-8.974,10.485-6.946,40.716-5.771,59.646c0.25,3.815,2.938,7.854,1.67,12.25c-0.679,2.227-3.521,4.859-4.151,6.858  c0.27,8.683,0.533,17.325,0.837,26.033c0.044,5.236,3.72,9.736,1.645,15.3c-0.452,1.147-2.797,2.104-3.324,3.014  c-1.545,2.816-0.36,6.986-0.823,9.176c-1.635,7.917,3.605,12.581,0.823,20.68c-5.595,16.388-9.67,34.34-15.722,51.219  c-1.394,3.836-4.645,7.75-5.811,11.507c-3.638,11.667,2.884,23.916-0.817,34.414c-2.529,7.203-8.938,7.331-9.111,17.578  c11.231,13.84-3.116,40.876-8.258,52c-2.827,5.957-2.529,10.582-11.628,10.716c-2.272-1.592-5.888-1.592-9.943-1.547  c-1.692,3.086-3.254,8.244-4.15,9.918c-0.814,0.535-1.635,1.077-2.462,1.622c-1.194,3.123,2.684,10.038,0.827,14.461  c-0.381,0.916-2.973,2.708-3.309,3.83c0.291,1.287,0.517,2.583,0.793,3.831c-0.14,0.918-1.313,3.209-1.604,4.582  c-10.922,6.254-49.431,13.003-50.563-5.323c2.87-2.592,2.934-5.672,4.99-9.214c4.628-7.997,8.639-8.923,5.792-20.621  c0.281-4.588,0.573-9.176,0.817-13.751c-1.557-4.543-6.366-6.584-7.449-12.259c1.328-1.031,0.951-0.497,1.673-2.328  c-8.798-5.672-5.531-16.745-9.118-27.496c-3.426-10.336-3.836-24.375-6.635-35.962c-0.265-6.084-0.536-12.248-0.833-18.332  c-2.415-9.876-1.669-22.496-4.124-32.914c-0.277-5.589-0.564-11.214-0.813-16.837c-3.384-10.672-7.805-18.193-10.792-30.573  c-0.264-11.222-0.535-22.436-0.829-33.623c0.293-1.353,1.542-5.123,0.829-7.665c-3.963-14.539-6.397-34.64-10.753-49.706  c-2.604-8.96,0.158-20.766-2.508-29.854c-2.39-8.295-6.11-15.439-9.925-22.146c-2.616-4.661-3.024-12.243-9.927-13.038  c-2.729,1.518-9.07-0.461-13.266-0.727c0.049-29.197-10.558-49.671-16.562-74.217c-0.56-10.183-1.127-20.408-1.669-30.574  c-3.517-15.004-0.361-28.857,3.343-42.834c4.595-17.464,5.185-35.247,9.898-52.002c0.574-4.621,1.11-9.167,1.673-13.768  c3.726-13.065,8.257-34.4,15.77-44.358c6.679-8.913,23.459-8.807,34.745-13.788c7.179-3.147,16.035-5.336,23.19-9.148  c6.075-3.247,12.844-12.932,18.253-17.625c0.158-14.229-3.45-22.42-4.171-34.394c-2.217,0-4.421,0-6.61,0  c-0.817-1.347-1.036-1.293-1.673-3.058c-3.942-4.567-2.371-15.294-0.833-20.648c3.702-1.017,5.327-0.127,5.795-4.601  c-2.857-4.09-0.469-15.835,0.86-19.105c5.027-12.583,17.87-23.527,34.767-24.478c21.072-1.184,37.005,13.273,40.607,29.06  c-0.849,6.625-1.669,13.269-2.474,19.935c5.119,1.543,7.509,2.734,8.258,8.397C337.515,85.25,340.759,95.333,328.218,95.273z   M374.604,265.808c-10.822,22.434-1.927,69.539,3.296,91.037c0,3.336,0,6.585,0,9.939c2.325,9.604,3.066,19.687,6.629,27.528  c0.835,0.285,1.672,0.517,2.509,0.758c0-0.242,0-0.474,0-0.758c0.659-0.901,0.608-1.296,0.805-3.028  c-3.518-5.516,0.88-16.75-0.805-23.749c-0.767-3.059-1.699-8.848-2.509-12.251c0-7.37,0-14.75,0-22.125  c-3.116-13.289-2.712-28.332-5.773-41.31c-1.9-7.939,2.028-19.773-2.484-25.27C375.409,265.97,376.023,266.271,374.604,265.808z   M219.699,274.202c-1.849,5.234-0.722,11.248-2.458,16.876c-0.837,2.603-3.525,6.5-4.13,9.146  c-1.222,5.19,3.455,10.875,1.648,17.623c-2.146,7.876-5.212,26.708-1.648,36.708c0.542,0,1.084,0,1.648,0c0-0.535,0-1.042,0-1.544  c4.622-6.352,4.399-16.394,6.609-25.244c4.289-17.124,8.756-23.416,2.481-42.059c-1.401-4.238-0.09-7.801-2.481-10.676  C220.527,274.395,221.144,274.718,219.699,274.202z M295.908,509.054c-1.084,1.438-1.084,0.62-1.642,3.045  c-7.385,10.12,2.773,25.705,0,36.722c-3.869,15.247,0.445,28.944,4.128,43.585c-0.271,6.083-0.548,12.24-0.819,18.361  c3.091,14.005,0.674,34.467,4.161,50.461c0.83,0,1.641,0,2.434,0c7.896-12.705,3.789-40.791,8.301-56.582  c0.533-1.869,2.611-18.843,2.497-19.153c-0.329-0.77-2.949-1.004-3.312-1.48c-1.309-1.995,0.385-5.252-0.833-6.933  c-1.172-1.634-4.4-1.612-5.799-3.028c-2.345-2.396-4.968-10.754-5.782-13.809c-2.438-8.773,5.872-14.688,7.443-19.875  c1.001-3.267-7.166-25.959-8.292-30.563C297.575,509.532,296.742,509.298,295.908,509.054z");
+                  }
+
+       }
+
+       
+        
+
+
+          function createChart(gender,iconpaTh)
+            {
+              $http.get('http://192.168.0.22:8000/details?startyear='+$scope.StartYear+'&endyear='+$scope.EndYear+'&endmonth='+$scope.EndMonth+'&startmonth='+$scope.StartMonth+'&gender='+gender).success(function(data){
+                //$scope.people=data
+                console.log(data['result']);
+                $scope.dicpicChart=data['result'];
+                // Themes end
+                var iconPath = iconpaTh;
+               // var iconPath = "M53.5,476c0,14,6.833,21,20.5,21s20.5-7,20.5-21V287h21v189c0,14,6.834,21,20.5,21 c13.667,0,20.5-7,20.5-21V154h10v116c0,7.334,2.5,12.667,7.5,16s10.167,3.333,15.5,0s8-8.667,8-16V145c0-13.334-4.5-23.667-13.5-31 s-21.5-11-37.5-11h-82c-15.333,0-27.833,3.333-37.5,10s-14.5,17-14.5,31v133c0,6,2.667,10.333,8,13s10.5,2.667,15.5,0s7.5-7,7.5-13 V154h10V476 M61.5,42.5c0,11.667,4.167,21.667,12.5,30S92.333,85,104,85s21.667-4.167,30-12.5S146.5,54,146.5,42 c0-11.335-4.167-21.168-12.5-29.5C125.667,4.167,115.667,0,104,0S82.333,4.167,74,12.5S61.5,30.833,61.5,42.5z"
+
+        
+
+
+        var chart = am4core.create("dicpic", am4charts.SlicedChart);
+        chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
+
+        chart.data = $scope.dicpicChart ;
+
+        var series = chart.series.push(new am4charts.PictorialStackedSeries());
+        series.dataFields.value = "value";
+        series.dataFields.category = "name";
+        series.alignLabels = true;
+
+        series.maskSprite.path = iconPath;
+        series.ticks.template.locationX = 1;
+        series.ticks.template.locationY = 0.5;
+
+        series.labelsContainer.width = 200;
+
+        chart.legend = new am4charts.Legend();
+        chart.legend.position = "left";
+        chart.legend.valign = "bottom";
+    });
+
+        //$scope.$apply();
+            }
+
+
+    }]).
+
+
+
+
+    controller('skyController',['$scope','$http','$routeParams',function($scope,$http,$routeParams){
+      //$scope.person=$scope.people[$routeParams.id]
+
+      
+      $http.get('http://192.168.0.22:8000/collision?startyear='+$scope.StartYear+'&endyear='+$scope.EndYear+'&endmonth='+$scope.EndMonth+'&startmonth='+$scope.StartMonth).success(function(data){
+                //$scope.people=data
+                console.log(data['result']);
+                $scope.skyChart=data['result'];
+
+                            
+            /**
+            * ---------------------------------------
+            * This demo was created using amCharts 4.
+            * 
+            * For more information visit:
+            * https://www.amcharts.com/
+            * 
+            * Documentation is available at:
+            * https://www.amcharts.com/docs/v4/
+            * ---------------------------------------
+            */
+
+            // Themes begin
+            am4core.useTheme(am4themes_animated);
+            // Themes end
+
+            var chart = am4core.create("sky", am4charts.SankeyDiagram);
+            chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+            chart.data = $scope.skyChart;
+
+            let hoverState = chart.links.template.states.create("hover");
+            hoverState.properties.fillOpacity = 0.6;
+            
+            chart.dataFields.fromName = "from";
+            chart.dataFields.toName = "to";
+            chart.dataFields.value = "value";
+            chart.fontSize=12           
+            var nodeTemplate = chart.nodes.template; 
+            nodeTemplate.strokeWidth = 2;
+            nodeTemplate.width = 30;
+            // for right-most label to fit
+
+            chart.paddingRight = 110;
+            //chart.padding=100;
+            // make nodes draggable            
+            var nodeTemplate = chart.nodes.template;
+            nodeTemplate.inert = true;
+            nodeTemplate.readerTitle = "Drag me!";
+            nodeTemplate.showSystemTooltip = true;
+            //nodeTemplate.width = 50;
+            var linkTemplate = chart.links.template;
+            
+            // make nodes draggable
+            var nodeTemplate = chart.nodes.template;
+            nodeTemplate.readerTitle = "Click to show/hide or drag to rearrange";
+            nodeTemplate.showSystemTooltip = true;
+            nodeTemplate.cursorOverStyle = am4core.MouseCursorStyle.pointer
+                });
+
+
+    }]).
+
+
+
+
+
+
+
+
+    controller('fdgController',['$scope','$http','$routeParams',function($scope,$http,$routeParams){
+      //$scope.person=$scope.people[$routeParams.id]
+
+      
+      $http.get('http://192.168.0.22:8000/weather?startyear='+$scope.StartYear+'&endyear='+$scope.EndYear+'&endmonth='+$scope.EndMonth+'&startmonth='+$scope.StartMonth).success(function(data){
+                //$scope.people=data
+                console.log(data['result']);
+                $scope.fdgChart=data['result'];
+
+                
+/**
+ * ---------------------------------------
+ * This demo was created using amCharts 4.
+ * 
+ * For more information visit:
+ * https://www.amcharts.com/
+ * 
+ * Documentation is available at:
+ * https://www.amcharts.com/docs/v4/
+ * ---------------------------------------
+ */
+
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+
+
+var chart = am4core.create("fdg", am4plugins_forceDirected.ForceDirectedTree);
+chart.legend = new am4charts.Legend(position = "left");
+chart.legend.maxWidth = 200;
+chart.legend.maxHeight = 100;
+chart.legend.scrollable = true;
+
+var networkSeries = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries())
+
+networkSeries.data = $scope.fdgChart;
+
+networkSeries.dataFields.linkWith = "linkWith";
+networkSeries.dataFields.name = "name";
+networkSeries.dataFields.id = "name";
+networkSeries.dataFields.value = "value";
+networkSeries.dataFields.children = "children";
+
+networkSeries.nodes.template.tooltipText = "{name}";
+networkSeries.nodes.template.fillOpacity = 1;
+
+networkSeries.nodes.template.label.text = "{name}"
+networkSeries.fontSize = 8;
+networkSeries.maxLevels = 2;
+networkSeries.maxRadius = am4core.percent(10);
+networkSeries.manyBodyStrength = -16;
+networkSeries.nodes.template.label.hideOversized = true;
+networkSeries.nodes.template.label.truncate = true;
+
+    });
+
+
+    }]).
+
+
+
+
+
+
+
+
+
+
+
+
+
+    controller('ddtmController',['$scope','$http','$routeParams',function($scope,$http,$routeParams){
+      //$scope.person=$scope.people[$routeParams.id]
+
+      
+      $http.get('http://192.168.0.22:8000/safety?startyear='+$scope.StartYear+'&endyear='+$scope.EndYear+'&endmonth='+$scope.EndMonth+'&startmonth='+$scope.StartMonth).success(function(data){
+                //$scope.people=data
+                console.log(data['result']);
+                $scope.ddtmChart=data['result'];
+
+                
+
+              // Themes begin
+      am4core.useTheme(am4themes_animated);
+      // Themes end
+
+      var data = $scope.ddtmChart
+      function processData(data) {
+        var treeData = [];
+
+        var smallBrands = { name: "Other", children: [] };
+
+        for (var brand in data) {
+          var brandData = { name: brand, children: [] }
+          var brandTotal = 0;
+          for (var model in data[brand]) {
+            brandTotal += data[brand][model];
+          }
+
+          for (var model in data[brand]) {
+            // do not add very small
+            if (data[brand][model] > 100) {
+              brandData.children.push({ name: model, count: data[brand][model] });
+            }
+          }
+
+          // add to small brands if total number less than
+          if (brandTotal > 1000) {
+            treeData.push(brandData);
+          }
+          else {
+            smallBrands.children.push(brandData)
+          }
+
+        }
+        treeData.push(smallBrands);
+        return treeData;
+      }
+
+      // create chart
+      var chart = am4core.create("ddtm", am4charts.TreeMap);
+      chart.hiddenState.properties.opacity = 0; // this makes initial fade in effect
+
+      // only one level visible initially
+      chart.maxLevels = 1;
+      // define data fields
+      chart.dataFields.value = "count";
+      chart.dataFields.name = "name";
+      chart.dataFields.children = "children";
+
+      // enable navigation
+      chart.navigationBar = new am4charts.NavigationBar();
+
+      // level 0 series template
+      var level0SeriesTemplate = chart.seriesTemplates.create("0");
+      level0SeriesTemplate.strokeWidth = 2;
+
+      // by default only current level series bullets are visible, but as we need brand bullets to be visible all the time, we modify it's hidden state
+      level0SeriesTemplate.bulletsContainer.hiddenState.properties.opacity = 0;
+      level0SeriesTemplate.bulletsContainer.hiddenState.properties.visible = false;
+
+      var bullet0 = level0SeriesTemplate.bullets.push(new am4charts.LabelBullet());
+      bullet0.locationX = 0.5;
+      bullet0.locationY = 0.5;
+      bullet0.label.text = "{name}";
+      bullet0.label.fill = am4core.color("#ffffff");
+
+      // create hover state
+      var columnTemplate = level0SeriesTemplate.columns.template;
+      var hoverState = columnTemplate.states.create("hover");
+
+      // darken
+      hoverState.adapter.add("fill", function (fill, target) {
+        if (fill instanceof am4core.Color) {
+          return am4core.color(am4core.colors.brighten(fill.rgb, -0.2));
+        }
+        return fill;
+      })
+
+      // add logo
+      var image = columnTemplate.createChild(am4core.Image);
+      image.opacity = 0.15;
+      image.align = "center";
+      image.valign = "middle";
+      image.width = am4core.percent(80);
+      image.height = am4core.percent(80);
+
+      // // add adapter for href to load correct image
+      // image.adapter.add("href", function (href, target) {
+      //   var dataItem = target.parent.dataItem;
+      //   if (dataItem) {
+      //     return "https://www.amcharts.com/lib/images/logos/" + dataItem.treeMapDataItem.name.toLowerCase() + ".png";
+      //   }
+      // });
+
+      // level1 series template
+      var level1SeriesTemplate = chart.seriesTemplates.create("1");
+      level1SeriesTemplate.columns.template.fillOpacity = 0;
+
+      var bullet1 = level1SeriesTemplate.bullets.push(new am4charts.LabelBullet());
+      bullet1.locationX = 0.5;
+      bullet1.locationY = 0.5;
+      bullet1.label.text = "{name}";
+      bullet1.label.fill = am4core.color("#ffffff");
+
+      // level2 series template
+      var level2SeriesTemplate = chart.seriesTemplates.create("2");
+      level2SeriesTemplate.columns.template.fillOpacity = 0;
+
+      var bullet2 = level2SeriesTemplate.bullets.push(new am4charts.LabelBullet());
+      bullet2.locationX = 0.5;
+      bullet2.locationY = 0.5;
+      bullet2.label.text = "{name}";
+      bullet2.label.fill = am4core.color("#ffffff");
+
+      chart.data = processData(data);
+
+
+    });
+
+
+    }]).
+
+
+
+
+
+
+    controller('aniPieController',['$scope','$http','$routeParams',function($scope,$http,$routeParams){
+      //$scope.person=$scope.people[$routeParams.id]
+
+      
+      $http.get('http://192.168.0.22:8000/vehicles?startyear='+$scope.StartYear+'&endyear='+$scope.EndYear+'&endmonth='+$scope.EndMonth+'&startmonth='+$scope.StartMonth).success(function(data){
+                //$scope.people=data
+                console.log(data['result']);
+                $scope.aniPieChart=data['result'];
+
+                
+
+        // Themes begin
+        am4core.useTheme(am4themes_animated);
+        // Themes end
+
+        /**
+        * Define data for each year
+        */
+        var chartData = $scope.aniPieChart;
+
+        // Create chart instance
+        var chart = am4core.create("aniTimeLinePie", am4charts.PieChart);
+
+        // Add data
+        chart.data = [
+           {
+               "sector": "Unknown",
+               "size": 32
+           },
+           {
+               "sector": "0 vehicle",
+               "size": 0
+           },
+           {
+               "sector": "1 vehicle",
+               "size": 97768
+           },
+           {
+               "sector": "2 vehicles",
+               "size": 278766
+           },
+           {
+               "sector": "3 vehicles",
+               "size": 54657
+           },
+           {
+               "sector": "4 vehicles",
+               "size": 13675
+           },
+           {
+               "sector": "5 vehicles",
+               "size": 3255
+           },
+           {
+               "sector": "6-10 vehicles",
+               "size": 2081
+           },
+           {
+               "sector": "11-15 vehicles",
+               "size": 371
+           },
+           {
+               "sector": "16-20 vehicles",
+               "size": 93
+           },
+           {
+               "sector": "21-25 vehicles",
+               "size": 126
+           },
+           {
+               "sector": "26-30 vehicles",
+               "size": 0
+           },
+           {
+               "sector": ">30 vehicles",
+               "size": 161
+           }
+       ];
+
+        // Add label
+        chart.innerRadius = 120;
+        var label = chart.seriesContainer.createChild(am4core.Label);
+        label.text = "Monday";
+        label.horizontalCenter = "middle";
+        label.verticalCenter = "middle";
+        label.fontSize = 30;
+
+        // Add and configure Series
+        var pieSeries = chart.series.push(new am4charts.PieSeries());
+        pieSeries.dataFields.value = "size";
+        pieSeries.dataFields.category = "sector";
+
+        var days = ["Monday", "Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Unknown",]
+        
+        // Animate chart data
+        var currentYear = 0;
+        function getCurrentData() {
+          label.text = days[currentYear];
+          var data = chartData[days[currentYear]];
+          currentYear++;
+          if (currentYear > 7)
+            currentYear = 0;
+          return data;
+        }
+
+        function loop() {
+          //chart.allLabels[0].text = currentYear;
+          var data = getCurrentData();
+          for(var i = 0; i < data.length; i++) {
+            console.log("*********************")
+            console.log(data);
+            chart.data[i].size = data[i].size;
+          }
+          chart.invalidateRawData();
+          chart.setTimeout( loop, 4000 );
+        }
+
+        loop();
+
+
+    });
+
+
+    }]).
+
+
+
+
+
+
+
+
+
+
+    controller('lpController',['$scope','$http','$routeParams',function($scope,$http,$routeParams){
+      //$scope.person=$scope.people[$routeParams.id]
+
+      
+      $http.get('http://192.168.0.22:8000/accidents?startyear='+$scope.StartYear+'&endyear='+$scope.EndYear+'&endmonth='+$scope.EndMonth+'&startmonth='+$scope.StartMonth).success(function(data){
+                //$scope.people=data
+                console.log(data['result']);
+                $scope.lpChart=data['result'];
+
+                
+// Themes begin
+am4core.useTheme(am4themes_animated);
+// Themes end
+
+var alarm = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjQ1Ljc3M3B4IiBoZWlnaHQ9IjQ1Ljc3M3B4IiB2aWV3Qm94PSIwIDAgNDUuNzczIDQ1Ljc3MyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDUuNzczIDQ1Ljc3MzsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik01LjA4MSwxMy43MzdjMi41ODItMy45NDIsNi42MDktNi44NDksMTEuMzItNy45ODhjMC4zNjMtMC4wODcsMC42NjItMC4zNDQsMC44MDItMC42ODkNCgkJCWMwLjE0MS0wLjM0NiwwLjEwNy0wLjczOC0wLjA5MS0xLjA1NUMxNS42MDQsMS42MDEsMTIuOTM2LDAsOS44ODgsMEM1LjE3NiwwLDEuMzU0LDMuODIsMS4zNTQsOC41MzJjMCwyLDAuNjkxLDMuODM3LDEuODQ1LDUuMjkNCgkJCWMwLjIzMSwwLjI5MywwLjU4OSwwLjQ1NSwwLjk2MiwwLjQzOFM0Ljg3NywxNC4wNDgsNS4wODEsMTMuNzM3eiIvPg0KCQk8cGF0aCBkPSJNMzUuODg2LDBjLTMuMDM0LDAtNS42OTMsMS41ODYtNy4yMDQsMy45NzRjLTAuMiwwLjMxNi0wLjIzNSwwLjcxMS0wLjA5NCwxLjA1OWMwLjE0MiwwLjM0OSwwLjQ0MiwwLjYwNSwwLjgwOSwwLjY5MQ0KCQkJYzQuNzI0LDEuMTEyLDguNzY1LDMuOTk5LDExLjM2OSw3LjkyOGMwLjIwNywwLjMxMiwwLjU1MiwwLjUwNSwwLjkyNywwLjUxOGMwLjM3NSwwLjAxNCwwLjczMS0wLjE1NCwwLjk2MS0wLjQ1MQ0KCQkJYzEuMTA1LTEuNDM2LDEuNzY2LTMuMjMyLDEuNzY2LTUuMTg2QzQ0LjQxNywzLjgyLDQwLjU5OCwwLDM1Ljg4NiwweiIvPg0KCQk8cGF0aCBkPSJNNDEuNzUyLDI2LjEzMmMwLTMuMjk0LTAuODU3LTYuMzktMi4zNTEtOS4wODRjLTIuNzY5LTQuOTktNy43NDItOC41NzctMTMuNTk1LTkuNDc1Yy0wLjkzMy0wLjE0My0xLjg4LTAuMjQtMi44NTMtMC4yNA0KCQkJYy0xLjAxNiwwLTIuMDA2LDAuMTA0LTIuOTc5LDAuMjZDMTQuMTQ2LDguNTI4LDkuMTk4LDEyLjEzLDYuNDU4LDE3LjEyNmMtMS40NjcsMi42NzYtMi4zMDQsNS43NDQtMi4zMDQsOS4wMDYNCgkJCWMwLDUuNTg2LDIuNDYzLDEwLjU5Nyw2LjM0MywxNC4wNDFsLTEuNTg0LDIuMjMxYy0wLjY4MiwwLjk2MS0wLjQ1NiwyLjI5MSwwLjUwNSwyLjk3NWMwLjM3NSwwLjI2NiwwLjgwNiwwLjM5NSwxLjIzMywwLjM5NQ0KCQkJYzAuNjY4LDAsMS4zMjYtMC4zMTMsMS43NDEtMC44OThsMS41ODMtMi4yM2MyLjY2OSwxLjQ1Nyw1LjcyOCwyLjI4Nyw4Ljk3OCwyLjI4N2MzLjI0OSwwLDYuMzA4LTAuODMsOC45NzctMi4yODdsMS41ODMsMi4yMw0KCQkJYzAuNDE2LDAuNTg2LDEuMDczLDAuODk4LDEuNzQxLDAuODk4YzAuNDI3LDAsMC44NTctMC4xMjksMS4yMzItMC4zOTVjMC45NjEtMC42ODQsMS4xODgtMi4wMTQsMC41MDYtMi45NzVsLTEuNTg0LTIuMjMxDQoJCQlDMzkuMjg4LDM2LjcyOSw0MS43NTIsMzEuNzE4LDQxLjc1MiwyNi4xMzJ6IE0yMi45NTQsMzkuNjc0Yy03LjQ2OCwwLTEzLjU0Mi02LjA3NC0xMy41NDItMTMuNTQyDQoJCQljMC0yLjMyOCwwLjU5MS00LjUxOSwxLjYyOS02LjQzNWMxLjk3Ni0zLjY0NCw1LjU4LTYuMjY5LDkuODI2LTYuOTNjMC42ODItMC4xMDYsMS4zNzUtMC4xNzgsMi4wODctMC4xNzgNCgkJCWMwLjY3LDAsMS4zMjUsMC4wNjUsMS45NywwLjE2YzQuMjgyLDAuNjI4LDcuOTI1LDMuMjUzLDkuOTI0LDYuOTEzYzEuMDUsMS45MjMsMS42NDcsNC4xMjYsMS42NDcsNi40NjkNCgkJCUMzNi40OTUsMzMuNiwzMC40MjEsMzkuNjc0LDIyLjk1NCwzOS42NzR6Ii8+DQoJCTxwYXRoIGQ9Ik0zMC41NCwyOS4zbC01LjE2Ni0zLjE5Yy0wLjEwNy0wLjYwNC0wLjQzNC0xLjEyNS0wLjg5My0xLjQ5NGwwLjIzNi02LjQ4MmMwLjAyOS0wLjgyOC0wLjYxNy0xLjUyMy0xLjQ0NC0xLjU1NA0KCQkJYy0wLjgyNS0wLjAzOC0xLjUyMywwLjYxNi0xLjU1NCwxLjQ0NGwtMC4yMzcsNi40ODljLTAuNjQxLDAuNDUyLTEuMDYzLDEuMTk2LTEuMDYzLDIuMDQxYzAsMS4zODEsMS4xMTksMi40OTksMi41LDIuNDk5DQoJCQljMC4zOTMsMCwwLjc2LTAuMDk5LDEuMDktMC4yNmw0Ljk1NSwzLjA2MmMwLjI0NiwwLjE1LDAuNTE5LDAuMjIzLDAuNzg3LDAuMjIzYzAuNTAzLDAsMC45OTMtMC4yNTIsMS4yNzgtMC43MTENCgkJCUMzMS40NjUsMzAuNjYsMzEuMjQ1LDI5LjczNiwzMC41NCwyOS4zeiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K";
+var water = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik00NDMuODgyLDUuMjhDNDQwLjg0MiwxLjkyLDQzNi41NTQsMCw0MzIuMDEsMGgtMzUyYy00LjUxMiwwLTguODMyLDEuOTItMTEuODcyLDUuMjgNCgkJCWMtMy4wMDgsMy4zMjgtNC41MTIsNy44MDgtNC4wNjQsMTIuMzJsNDgsNDgwYzAuODMyLDguMTkyLDcuNzEyLDE0LjQsMTUuOTM2LDE0LjRoMjU2YzguMjI0LDAsMTUuMTA0LTYuMjA4LDE1LjkwNC0xNC40bDQ4LTQ4MA0KCQkJQzQ0OC4zOTQsMTMuMDg4LDQ0Ni45MjIsOC42MDgsNDQzLjg4Miw1LjI4eiBNNDAxLjI5LDE2Mi40OTZjLTQwLjY3MiwxMy4xNTItOTMuNiwxOS4yMzItMTM1LjEzNi0xNC44NDgNCgkJCWMtNTIuMDY0LTQyLjcyLTExNS44NzItMzUuMzYtMTU5LjEzNi0yMi40OTZMOTcuNzA2LDMyaDMxNi42MDhMNDAxLjI5LDE2Mi40OTZ6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=";
+var exercise = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNjEuODU4IDYxLjg1OCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNjEuODU4IDYxLjg1ODsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIHN0eWxlPSJmaWxsOiMwMTAwMDI7IiBkPSJNNTAuMDk3LDAuMDE0Yy05LjkxNywwLjg3NC0xNy4yMzUsNS44MjQtMjEuNTAxLDEyLjk4Yy0yLjg1OSwzLjU4NC04LjU3LDE0LjUyNi0xMC42NDcsMjAuMjU0DQoJCQljLTMuNzY2LDcuMTIzLTcuMDUsMTUuNTk4LTkuNjIsMjMuMjM4Yy0xLjU3MSw0LjY3Miw1LjQ4Myw3LjcyLDcuMDYzLDMuMDI3YzEuOTIyLTUuNzE2LDQuMjQ0LTExLjg5Niw2Ljg2OC0xNy42MzENCgkJCWMyLjYwNCw1LjgyOCw1LjI1LDExLjYzNyw4LjA5MSwxNy4zNTRjMi4yMDIsNC40MzgsOC44MjgsMC41NDYsNi42MzQtMy44NzdjLTIuOTI1LTUuODg1LTUuNjQyLTExLjg2NC04LjMxOS0xNy44NjMNCgkJCWMwLjAzNC0wLjExNiwwLjA3Ny0wLjIyOSwwLjExMy0wLjM0NGMwLjQ0NiwwLjEyNywwLjkzOCwwLjE2NiwxLjQ4LDAuMDYzYzQuMDk2LTAuNzY5LDguMTkyLTEuNTM2LDEyLjI5MS0yLjMwNQ0KCQkJYzEuNzUxLTAuMzI5LDIuNDIyLTIuMjQ1LDIuMTQ2LTMuNzc5Yy0wLjgyOC00LjU5Ny0zLjQ0Ny03Ljc5NS02LjcwNy0xMC44MjFjLTAuNDg0LTEuNjQ2LTIuMDk4LTMuMTAyLTMuODg5LTQuNTQ5DQoJCQljMy42MzEtNS44Nyw5LjU1OS05LjA1NiwxNy4yNzUtOS43MzZDNTUuMzEzLDUuNjgsNTQuMDAxLTAuMzI5LDUwLjA5NywwLjAxNHogTTM1LjE3MywyNi4xNDMNCgkJCWMxLjAxMywxLjA1NCwxLjg3NSwyLjE2MywyLjUyNiwzLjQ0N2MtMS45ODIsMC4zNzItMy45NjUsMC43NDMtNS45NDcsMS4xMTVDMzIuNzUyLDI5LjA5NSwzMy45MDMsMjcuNTc1LDM1LjE3MywyNi4xNDN6Ii8+DQoJCTxjaXJjbGUgc3R5bGU9ImZpbGw6IzAxMDAwMjsiIGN4PSI0My42NTMiIGN5PSIxNS42MzUiIHI9IjUuMjc1Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=";
+var breakfast = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjQ1LjY5MnB4IiBoZWlnaHQ9IjQ1LjY5MXB4IiB2aWV3Qm94PSIwIDAgNDUuNjkyIDQ1LjY5MSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDUuNjkyIDQ1LjY5MTsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0yOS40MywyNi42NDVjLTAuMzY5LTAuNDI1LTAuOTA2LTAuNzg1LTEuNDctMC43ODVIMTcuNzg5Yy0wLjU2NCwwLTEuMTAxLDAuMzYtMS40NzEsMC43ODUNCgkJCWMtMC4zNjksMC40MjYtMC41MzUsMS4wNDktMC40NTYsMS42MDdsMS43MDEsMTEuOTE3YzAuMTM3LDAuOTU4LDAuOTU3LDEuNjkyLDEuOTI0LDEuNjkyaDYuNzczYzAuOTY3LDAsMS43ODktMC43MDUsMS45MjQtMS42NjQNCgkJCWwxLjcwMS0xMS45NDhDMjkuOTY0LDI3LjY5MSwyOS43OTcsMjcuMDcsMjkuNDMsMjYuNjQ1eiIvPg0KCQk8cGF0aCBkPSJNMTQuMDY2LDMwLjQyOGMtMC42MTgtMC4yNzEtMS4zMzMtMC4yMDUtMS44ODksMC4xNzhsLTQuNTU0LDMuMTQxYy0wLjg4NSwwLjYwOS0xLjEwNiwxLjgyLTAuNDk3LDIuNzAzbDMuOTMxLDUuNzAxDQoJCQljMC41NjgsMC44MjQsMS42NzEsMS4wODIsMi41NDcsMC41OTRsMS43MDEtMC45NDhjMC42OTgtMC4zOSwxLjA4OC0xLjE2OCwwLjk3OS0xLjk2MWwtMS4wNzgtNy44OTINCgkJCUMxNS4xMTcsMzEuMjc1LDE0LjY4NCwzMC43MDEsMTQuMDY2LDMwLjQyOHoiLz4NCgkJPHBhdGggZD0iTTcuNzg0LDM5Ljg1NWMtMC4yMTctMC4yOTEtMC41ODUtMC40MjctMC45MzktMC4zNDZjLTAuMzUzLDAuMDgxLTAuNjI3LDAuMzYxLTAuNjk4LDAuNzE3bC0wLjg3OCw0LjM2MQ0KCQkJYy0wLjA3MiwwLjM1NywwLjA3NCwwLjcyMywwLjM3LDAuOTM0YzAuMjk5LDAuMjExLDAuNjksMC4yMjcsMS4wMDQsMC4wNDFsMi44Ny0xLjcwN2MwLjIyNS0wLjEzMywwLjM4My0wLjM1NSwwLjQzNC0wLjYxMQ0KCQkJYzAuMDUyLTAuMjU4LTAuMDA5LTAuNTIzLTAuMTY2LTAuNzMyTDcuNzg0LDM5Ljg1NXoiLz4NCgkJPHBhdGggZD0iTTM4LjA2NywzMy43NDZsLTQuNTU1LTMuMTQxYy0wLjU1Ny0wLjM4My0xLjI3MS0wLjQ1MS0xLjg5LTAuMTc4Yy0wLjYxNywwLjI3MS0xLjA0OSwwLjg0OC0xLjE0MiwxLjUxNmwtMS4wNzcsNy44OTINCgkJCWMtMC4xMDgsMC43OTMsMC4yOCwxLjU3MSwwLjk3OSwxLjk2MWwxLjcsMC45NDhjMC44NzYsMC40ODgsMS45NzksMC4yMywyLjU0Ny0wLjU5NGwzLjkzMS01LjcwMQ0KCQkJQzM5LjE3MiwzNS41NjYsMzguOTUsMzQuMzU1LDM4LjA2NywzMy43NDZ6Ii8+DQoJCTxwYXRoIGQ9Ik00MC40MjIsNDQuNTg3bC0wLjg3OC00LjM2Yy0wLjA3MS0wLjM1Ny0wLjM0NS0wLjYzNy0wLjY5OC0wLjcxOHMtMC43MjMsMC4wNTYtMC45MzgsMC4zNDVsLTEuOTk2LDIuNjU1DQoJCQljLTAuMTU2LDAuMjA5LTAuMjE4LDAuNDc2LTAuMTY2LDAuNzMxYzAuMDUxLDAuMjU3LDAuMjA5LDAuNDc5LDAuNDM1LDAuNjEzbDIuODY5LDEuNzA3YzAuMzEzLDAuMTg2LDAuNzA1LDAuMTcsMS4wMDQtMC4wNDENCgkJCUM0MC4zNSw0NS4zMTEsNDAuNDk1LDQ0Ljk0Myw0MC40MjIsNDQuNTg3eiIvPg0KCQk8cGF0aCBkPSJNMjMuMDE4LDIzLjk0NWMxLjQzMywwLDEzLjk4OC0wLjEyMywxMy45ODgtNC40MWMwLTEuOTEtMi40OTUtMi45OTMtNS4zODktMy42MDZjMC4xMTItMC4xODUsMC4yMTgtMC4zNzYsMC4zMTctMC41Nw0KCQkJbDEuOTg1LTAuMTc4YzEuNTkzLTAuMDM4LDIuOTIxLTEuMjM2LDMuMDk5LTIuNzk5bDAuMzk4LTMuNDAyYzAuMTAyLTAuODgxLTAuMTU2LTEuNjA0LTAuNzktMi4zMTQNCgkJCWMtMC43MjgtMC44MTMtMS43MjYtMC43NjgtMi4zODctMC43NjhoLTAuOTA3bDAuMTk1LTIuNzk2YzAuMDAyLTAuMDE0LDAuMDAyLTAuMDU2LDAuMDAzLTAuMDY5DQoJCQljMC4wMDEtMC4wMjMsMC4wMDMtMC4wNjIsMC4wMDMtMC4wODVDMzMuNTM0LDEuMzI0LDI4LjgyNSwwLDIzLjAxNywwUzEyLjUwMiwxLjMxNCwxMi41MDIsMi45MzljMCwwLjAyNCwwLDAuMDQ2LDAuMDAzLDAuMDY5DQoJCQljMCwwLjAxNCwwLDAuMDI2LDAuMDAyLDAuMDM5bDAuNjMyLDguODQ0YzAuMTA0LDEuNDc2LDAuNTYsMi44NDgsMS4yNzgsNC4wMzljLTIuODkxLDAuNjE0LTUuMzg4LDEuNjk3LTUuMzg4LDMuNjA2DQoJCQlDOS4wMywyMy44MjIsMjEuNTg2LDIzLjk0NSwyMy4wMTgsMjMuOTQ1eiBNMzIuODk3LDEyLjAwN0wzMy4yLDcuOTA2aDEuMzMzYzAuODMyLDAsMS4wODYsMC44MTEsMS4wNTMsMS4xMDNsLTAuNDExLDMuMjg3DQoJCQljLTAuMDc4LDAuNjY3LTAuNjAyLDAuOTQ1LTEuMjk2LDAuOTczYy0wLjI5OCwwLjAxMi0xLjE5LDAuMDgyLTEuMTksMC4wODJDMzIuODExLDEyLjg0OSwzMi44NTgsMTIuNTQxLDMyLjg5NywxMi4wMDd6DQoJCQkgTTIzLjAxOCwyLjE0YzMuODA4LDAsNi44OTQsMC42NDYsNi44OTQsMS40NDRjMCwwLjgtMy4wODYsMS40NDYtNi44OTQsMS40NDZjLTMuODA2LDAtNi44OTQtMC42NDYtNi44OTQtMS40NDYNCgkJCUMxNi4xMjQsMi43ODcsMTkuMjExLDIuMTQsMjMuMDE4LDIuMTR6IE0xNi4yNDIsMTcuODg1YzEuNTk2LDEuMzg0LDMuNjc2LDIuMDA5LDUuOTM4LDIuMDA5aDEuNjc1DQoJCQljMi4yNjQsMCw0LjM0NC0wLjYyNSw1LjkzOS0yLjAwOWMyLjUxLDAuNDExLDQuMTIyLDEuMSw0LjY0NSwxLjU0N2MtMC44OTksMC43NzEtNS4wMzQsMi4wMDMtMTEuNDIsMi4wMDMNCgkJCWMtNi4zODQsMC0xMC41MjEtMS4yNTItMTEuNDE4LTIuMDI0QzEyLjExOSwxOC45NjMsMTMuNzMsMTguMjk2LDE2LjI0MiwxNy44ODV6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=";
+var work = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9Ijc3OS4xMXB4IiBoZWlnaHQ9Ijc3OS4xMXB4IiB2aWV3Qm94PSIwIDAgNzc5LjExIDc3OS4xMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNzc5LjExIDc3OS4xMTsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik02NjIuOTE0LDYzMi4zNTFINTMwLjA3SDI1NC40NzRjLTExLjQ5LDAtMjAuODA2LDkuMzE1LTIwLjgwNiwyMC44MDZ2MTIuODA1YzAsMTEuNDksOS4zMTUsMjAuODEsMjAuODA2LDIwLjgxaDI3NS41OTgNCgkJCWgxMzIuODQ0aDY4Ljgydi01NC40MThMNjYyLjkxNCw2MzIuMzUxTDY2Mi45MTQsNjMyLjM1MXoiLz4NCgkJPGNpcmNsZSBjeD0iMjExLjE4NyIgY3k9IjE4OS42MjUiIHI9IjExNS4xOSIvPg0KCQk8cGF0aCBkPSJNNDkyLjIzNCw0NzIuMTQ3bC0yNjMuOTY5LTAuMTQ2bC02LjI1LTAuMDJ2LTMwLjYzMmwtMC4yMTctMjUuNjRjMC02MS4yNDUtNDkuNjUxLTExMC44OTgtMTEwLjg5OS0xMTAuODk4DQoJCQljLTIuMDc1LDAtNC4xMzYsMC4wNy02LjE4NCwwLjE4MmwtMC4xNTYtMC4xODJDNDYuODEzLDMwNC44MTMsMCwzNTEuNjI1LDAsNDA5LjM3MnYyOTUuMzAzaDIyMi4wMTVWNTc4Ljg3NmwtMi45MzctMC4yMzENCgkJCWMtMC4yMDktMC4wMTktMC4yNjEsMC4wMDItMC4zOTEsMC4wMDJjLTE1LjAyMSwwLTI5LjQxNy02LjMyNC0zOS41NjItMTcuMzk5bC05MC4xMTItOTguMzYzDQoJCQljLTIuODczLTMuMTM1LTIuNjYtOC4wMDMsMC40NzYtMTAuODc0YzMuMTMzLTIuODczLDguMDAzLTIuNjU5LDEwLjg3NCwwLjQ3Nmw5MC4xMTEsOTguMzYyDQoJCQljNy4zMjIsNy45OTMsMTcuNjQ4LDEyLjg4MSwyOC41MjEsMTMuMDM5YzAuNzIzLDAuMDEsMTAuNTk0LDAuMTUyLDEwLjU5NCwwLjE1MmgyNjIuNjQ1YzI1LjM3NSwwLDQ1Ljk0Ny0yMC41NzEsNDUuOTQ3LTQ1Ljk0Nw0KCQkJQzUzOC4xODIsNDkyLjcxNyw1MTcuNjA5LDQ3Mi4xNDcsNDkyLjIzNCw0NzIuMTQ3eiIvPg0KCQk8cGF0aCBkPSJNNzY1LjE5NywzMDkuMTExYy0xMC43NDQtMy42ODEtMjIuNDM5LDIuMDQ5LTI2LjEyMywxMi43OTRsLTg3LjIwOSwyNTQuNTlIMzM5LjgwM2MtMTEuMzU2LDAtMjAuNTY3LDkuMjA2LTIwLjU2NywyMC41NjQNCgkJCXM5LjIxMSwyMC41NjYsMjAuNTY3LDIwLjU2NmgzMjYuNTA3YzYuOTk0LDAsMTMuMTY4LTMuNTAzLDE2Ljg3OS04Ljg0MWMxLjI4My0xLjY5NCwyLjMzLTMuNjA3LDMuMDU5LTUuNzI5TDc3OCwzMzUuMjI1DQoJCQlDNzgxLjY3LDMyNC40ODYsNzc1Ljk0NywzMTIuNzksNzY1LjE5NywzMDkuMTExeiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K";
+var car = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNjEyLjAwMSA2MTIuMDAxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA2MTIuMDAxIDYxMi4wMDE7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxwYXRoIGQ9Ik01ODkuMzMzLDI3Ni4wMzNjLTExLjIzNC0zLjc1Ni04OS4zNzgtMjAuODM0LTg5LjM3OC0yMC44MzRzLTE0NC44Ni04Mi4zNzUtMTYyLjI0NS04Mi4zNzVzLTEzNi42MzksMC4wNTMtMTM2LjYzOSwwLjA1Mw0KCQljLTI5LjEzNywwLTUzLjQ4NywyMi4yMDMtODEuNjgsNDcuOTA5Yy0xMy4yODcsMTIuMTEyLTI3Ljk1MywyNS40NDItNDQuMTMsMzcuMjk5bC02MC4yNDksOC4wMTENCgkJQzYuMzA2LDI2OC44NzIsMCwyNzcuMDE4LDAsMjg2LjY0M3Y2OS4wM2MwLDExLjkxMyw5LjY1NiwyMS41NzEsMjEuNTcsMjEuNTcxaDQxLjQwMWMzLjAwNywzNC42NSwzMi4xNTMsNjEuOTMyLDY3LjU3LDYxLjkzMg0KCQljMzUuNDE1LDAsNjQuNTYzLTI3LjI4Myw2Ny41Ny02MS45MzFoMTk3LjY4N2MzLjAwNywzNC42NSwzMi4xNTMsNjEuOTMxLDY3LjU3LDYxLjkzMXM2NC41NjMtMjcuMjgzLDY3LjU3LTYxLjkzMWgzNC4wMTMNCgkJYzI2Ljk1LDAsNDAuMTE5LTExLjY0LDQzLjQyNi0yMi41NjZDNjE2LjczOSwzMjcuMDMsNjEwLjcyNCwyODMuMTg1LDU4OS4zMzMsMjc2LjAzM3ogTTEzMC41NDEsNDA2LjQ4DQoJCWMtMTkuMzgsMC0zNS4xNDgtMTUuNzY2LTM1LjE0OC0zNS4xNDZzMTUuNzY2LTM1LjE0OCwzNS4xNDgtMzUuMTQ4YzE5LjM4LDAsMzUuMTQ2LDE1Ljc2NiwzNS4xNDYsMzUuMTQ4DQoJCUMxNjUuNjg4LDM5MC43MTQsMTQ5LjkyMSw0MDYuNDgsMTMwLjU0MSw0MDYuNDh6IE0yNjEuMDA4LDI1NS4yMDFIMTQzLjEzNGM4LjUyNi02LjczNiwxNi40MDktMTMuODg2LDIzLjY3MS0yMC41MDUNCgkJYzE5LjA4Ni0xNy40MDIsMzUuNTctMzIuNDMyLDU1LjI5NC0zMi40MzJjMCwwLDE3Ljg1LTAuMDA4LDM4LjkxLTAuMDE3VjI1NS4yMDF6IE0yODkuNzExLDIwMi4yMzYNCgkJYzE0LjU4OC0wLjAwNSwyNy41OTItMC4wMDksMzQuMTE2LTAuMDA5YzE2LjI0NSwwLDgyLjEzNSwzOC4yNjQsMTA2Ljg2NCw1Mi45NzVoLTE0MC45OEwyODkuNzExLDIwMi4yMzZMMjg5LjcxMSwyMDIuMjM2eg0KCQkgTTQ2My4zNjcsNDA2LjQ4Yy0xOS4zOCwwLTM1LjE0Ni0xNS43NjYtMzUuMTQ2LTM1LjE0NnMxNS43NjYtMzUuMTQ4LDM1LjE0Ni0zNS4xNDhjMTkuMzgsMCwzNS4xNDgsMTUuNzY2LDM1LjE0OCwzNS4xNDgNCgkJQzQ5OC41MTUsMzkwLjcxNCw0ODIuNzQ3LDQwNi40OCw0NjMuMzY3LDQwNi40OHoiLz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K";
+var coffee = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMS45OTkgNTExLjk5OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTExLjk5OSA1MTEuOTk5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTE3OS4zNjEsOTkuOTAzYy0xMS40MS0xMS40MS0xNi40NTQtMTcuMDA1LTE2LjQ1Mi0zMC4wODljLTAuMDAyLTEzLjA3OSw1LjA0NC0xOC42NzQsMTYuNDU3LTMwLjA4OQ0KCQkJYzkuMDg5LTkuMDg3LDkuMDg5LTIzLjgyLDAuMDAyLTMyLjkwOWMtOS4wODctOS4wOS0yMy44MjUtOS4wODctMzIuOTE0LTAuMDAyYy0xMi42OTksMTIuNjk4LTMwLjA5NSwzMC4wOS0zMC4wOSw2Mi45OTkNCgkJCWMtMC4wMDUsMzIuOTE0LDE3LjM4OCw1MC4zMDUsMzAuMDg5LDYzLjAwMWMxMS40MTEsMTEuNDEzLDE2LjQ1NywxNy4wMTEsMTYuNDU3LDMwLjA5MmMwLDEyLjg1NCwxMC40MiwyMy4yNzMsMjMuMjczLDIzLjI3Mw0KCQkJczIzLjI3My0xMC40MTgsMjMuMjczLTIzLjI3M0MyMDkuNDU0LDEyOS45OTMsMTkyLjA2MiwxMTIuNjAxLDE3OS4zNjEsOTkuOTAzeiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjg3Ljk2Nyw5OS45MDNjLTExLjQxLTExLjQxLTE2LjQ1NC0xNy4wMDUtMTYuNDUyLTMwLjA4OWMtMC4wMDItMTMuMDc5LDUuMDQ0LTE4LjY3NCwxNi40NTctMzAuMDg5DQoJCQljOS4wODktOS4wODcsOS4wODktMjMuODIsMC4wMDItMzIuOTA5Yy05LjA4Ny05LjA5LTIzLjgyNS05LjA4Ny0zMi45MTQtMC4wMDJjLTEyLjY5OSwxMi42OTgtMzAuMDk1LDMwLjA5Mi0zMC4wOSw2Mi45OTkNCgkJCWMtMC4wMDUsMzIuOTE0LDE3LjM4OCw1MC4zMDUsMzAuMDg5LDYzLjAwMWMxMS40MTEsMTEuNDEzLDE2LjQ1NywxNy4wMTEsMTYuNDU3LDMwLjA5MmMwLDEyLjg1NCwxMC40MiwyMy4yNzMsMjMuMjczLDIzLjI3Mw0KCQkJczIzLjI3My0xMC40MTgsMjMuMjczLTIzLjI3M0MzMTguMDYxLDEyOS45OTMsMzAwLjY2OCwxMTIuNjAxLDI4Ny45NjcsOTkuOTAzeiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMzgxLjQwMSw0MDMuMzkzaDIxLjk5M2MwLjAyMiwwLDAuMDM5LTAuMDAzLDAuMDYxLTAuMDAzYzQ3LjAyMy0wLjAzMSw4NS4yNzMtMzguMjk4LDg1LjI3My04NS4zMzENCgkJCWMwLTQ3LjA1My0zOC4yODEtODUuMzM0LTg1LjMzNC04NS4zMzRoLTMxLjAzSDYyLjA2Yy0xMi44NTMsMC0yMy4yNzMsMTAuNDIyLTIzLjI3MywyMy4yNzN2NzcuNTc2DQoJCQljMCw1Mi4xOTMsMjIuNTI4LDk5LjIyMSw1OC4zNywxMzEuODc5SDQ2LjU0NWMtMTIuODUzLDAtMjMuMjczLDEwLjQxOC0yMy4yNzMsMjMuMjczYzAsMTIuODUxLDEwLjQyLDIzLjI3MywyMy4yNzMsMjMuMjczDQoJCQloMTcwLjY2N2gxNzAuNjY3YzEyLjg1MywwLDIzLjI3My0xMC40MjIsMjMuMjczLTIzLjI3M2MwLTEyLjg1NC0xMC40Mi0yMy4yNzMtMjMuMjczLTIzLjI3M2gtNTAuNjEyDQoJCQlDMzU2LjEwNCw0NDguMjg5LDM3MS4yNTcsNDI3LjE1OCwzODEuNDAxLDQwMy4zOTN6IE0zOTUuNjM3LDMzMy41NzV2LTU0LjMwM2g3Ljc1OGMyMS4zODgsMCwzOC43ODgsMTcuNCwzOC43ODgsMzguNzg4DQoJCQlzLTE3LjQsMzguNzg4LTM4Ljc4OCwzOC43ODhjLTAuMDExLDAtMC4wMiwwLTAuMDMxLDBoLTkuMjQ1QzM5NS4xMTUsMzQ5LjIyOSwzOTUuNjM3LDM0MS40NjEsMzk1LjYzNywzMzMuNTc1eiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K";
+var dinner = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMiA1MTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjY0LjE4MSw3Ni45MDljLTkzLjY0NiwwLTE2OS41NjEsNzUuOTE1LTE2OS41NjEsMTY5LjU2MXM3NS45MTUsMTY5LjU2MSwxNjkuNTYxLDE2OS41NjENCgkJCXMxNjkuNTYxLTc1LjkxNSwxNjkuNTYxLTE2OS41NjFTMzU3LjgyNyw3Ni45MDksMjY0LjE4MSw3Ni45MDl6IE0yNjQuMTgsMzc1LjEyOWMtNzAuOTQyLDAtMTI4LjY1OC01Ny43MTYtMTI4LjY1OC0xMjguNjU4DQoJCQlzNTcuNzE2LTEyOC42NTgsMTI4LjY1OC0xMjguNjU4czEyOC42NTgsNTcuNzE2LDEyOC42NTgsMTI4LjY1OFMzMzUuMTIzLDM3NS4xMjksMjY0LjE4LDM3NS4xMjl6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0yNjQuMTgsMTUyLjI5OWMtNTEuOTI2LDAtOTQuMTcxLDQyLjI0NS05NC4xNzEsOTQuMTcxYzAsNTEuOTI2LDQyLjI0NSw5NC4xNzEsOTQuMTcxLDk0LjE3MQ0KCQkJYzUxLjkyNiwwLDk0LjE3MS00Mi4yNDUsOTQuMTcxLTk0LjE3MVMzMTYuMTA3LDE1Mi4yOTksMjY0LjE4LDE1Mi4yOTl6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik01MDEuMzE1LDI2MC42ODdWNTQuNjRjMC0xLjk4OC0xLjI2OS0zLjc1NS0zLjE1NS00LjM5Yy0xLjg4NC0wLjYzNC0zLjk2MywwLjAwNy01LjE2NiwxLjU5MQ0KCQkJYy0yNS43MDgsMzMuOTAzLTM5LjYyMiw3NS4yODMtMzkuNjIyLDExNy44M3Y3NS4zNzhjMCw4LjY0NSw3LjAwOCwxNS42NTQsMTUuNjU0LDE1LjY1NGg2LjUyNg0KCQkJYy02LjQzMyw2Ni40NDMtMTAuNjg0LDE1OS4zNy0xMC42ODQsMTcwLjI1MWMwLDE3LjE0MiwxMC41NTEsMzEuMDM4LDIzLjU2NiwzMS4wMzhjMTMuMDE1LDAsMjMuNTY2LTEzLjg5NywyMy41NjYtMzEuMDM4DQoJCQlDNTEyLDQyMC4wNzIsNTA3Ljc0OSwzMjcuMTMsNTAxLjMxNSwyNjAuNjg3eiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNNjguNDE3LDIxOS44NDNjMTMuMDQyLTcuOSwyMS43NTktMjIuMjI0LDIxLjc1OS0zOC41ODZsLTYuNDYtMTA1LjYyMWMtMC4yNDctNC4wMjYtMy41ODQtNy4xNjUtNy42MTgtNy4xNjUNCgkJCWMtNC4zNjMsMC03LjgzOSwzLjY1NS03LjYyMiw4LjAxbDQuMjAxLDg0LjcwOWMwLDQuNzYyLTMuODYxLDguNjIxLTguNjIxLDguNjIxYy00Ljc2MSwwLTguNjIxLTMuODYxLTguNjIxLTguNjIxbC0yLjA5OS04NC42NzQNCgkJCWMtMC4xMTEtNC40NzUtMy43Ny04LjA0NC04LjI0Ny04LjA0NGMtNC40NzcsMC04LjEzNSwzLjU3LTguMjQ3LDguMDQ0bC0yLjA5OSw4NC42NzRjMCw0Ljc2Mi0zLjg2MSw4LjYyMS04LjYyMSw4LjYyMQ0KCQkJYy00Ljc2MSwwLTguNjIxLTMuODYxLTguNjIxLTguNjIxbDQuMjAxLTg0LjcwOWMwLjIxNi00LjM1Ny0zLjI2Mi04LjAxLTcuNjIyLTguMDFjLTQuMDM0LDAtNy4zNzEsMy4xMzktNy42MTcsNy4xNjVMMCwxODEuMjU4DQoJCQljMCwxNi4zNjIsOC43MTYsMzAuNjg1LDIxLjc1OSwzOC41ODZjOC40ODgsNS4xNDEsMTMuMjIsMTQuNzUzLDEyLjEyNiwyNC42MTdjLTcuMzYzLDY2LjM1OC0xMi4zNjMsMTc0LjY5My0xMi4zNjMsMTg2LjQ5NA0KCQkJYzAsMTcuMTQyLDEwLjU1MSwzMS4wMzgsMjMuNTY2LDMxLjAzOGMxMy4wMTUsMCwyMy41NjYtMTMuODk3LDIzLjU2Ni0zMS4wMzhjMC0xMS44MDEtNS4wMDEtMTIwLjEzNi0xMi4zNjMtMTg2LjQ5NA0KCQkJQzU1LjE5NiwyMzQuNjAyLDU5LjkzMywyMjQuOTgyLDY4LjQxNywyMTkuODQzeiIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K";
+var book = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDI5Ni45OTkgMjk2Ljk5OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjk2Ljk5OSAyOTYuOTk5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPGc+DQoJCQk8cGF0aCBkPSJNNDUuNDMyLDM1LjA0OWMtMC4wMDgsMC0wLjAxNywwLTAuMDI1LDBjLTIuODA5LDAtNS40NTEsMS4wOTUtNy40NDYsMy4wODVjLTIuMDE3LDIuMDEyLTMuMTI4LDQuNjkxLTMuMTI4LDcuNTQzDQoJCQkJdjE1OS4zNjVjMCw1Ljg0NCw0Ljc3MywxMC42MSwxMC42NDEsMTAuNjI1YzI0LjczOCwwLjA1OSw2Ni4xODQsNS4yMTUsOTQuNzc2LDM1LjEzNlY4NC4wMjNjMC0xLjk4MS0wLjUwNi0zLjg0Mi0xLjQ2MS01LjM4Mg0KCQkJCUMxMTUuMzIyLDQwLjg0OSw3MC4yMjYsMzUuMTA3LDQ1LjQzMiwzNS4wNDl6Ii8+DQoJCQk8cGF0aCBkPSJNMjYyLjE2NywyMDUuMDQyVjQ1LjY3NmMwLTIuODUyLTEuMTExLTUuNTMxLTMuMTI4LTcuNTQzYy0xLjk5NS0xLjk5LTQuNjM5LTMuMDg1LTcuNDQ1LTMuMDg1Yy0wLjAwOSwwLTAuMDE4LDAtMC4wMjYsMA0KCQkJCWMtMjQuNzkzLDAuMDU5LTY5Ljg4OSw1LjgwMS05My4zNTcsNDMuNTkzYy0wLjk1NSwxLjU0LTEuNDYsMy40MDEtMS40Niw1LjM4MnYxNjYuNzc5DQoJCQkJYzI4LjU5Mi0yOS45MjEsNzAuMDM4LTM1LjA3Nyw5NC43NzYtMzUuMTM2QzI1Ny4zOTQsMjE1LjY1MSwyNjIuMTY3LDIxMC44ODUsMjYyLjE2NywyMDUuMDQyeiIvPg0KCQkJPHBhdGggZD0iTTI4Ni4zNzMsNzEuODAxaC03LjcwNnYxMzMuMjQxYzAsMTQuOTIxLTEyLjE1NywyNy4wODgtMjcuMTAxLDI3LjEyNWMtMjAuOTgzLDAuMDUtNTUuNTgxLDQuMTUzLTgwLjA4NCwyNy4zNDQNCgkJCQljNDIuMzc4LTEwLjM3Niw4Ny4wNTItMy42MzEsMTEyLjUxMiwyLjE3MWMzLjE3OSwwLjcyNCw2LjQ2NC0wLjAyNCw5LjAxMS0yLjA1NGMyLjUzOC0yLjAyNSwzLjk5NC01LjA1MiwzLjk5NC04LjMwMVY4Mi40MjcNCgkJCQlDMjk3LDc2LjU2OCwyOTIuMjMyLDcxLjgwMSwyODYuMzczLDcxLjgwMXoiLz4NCgkJCTxwYXRoIGQ9Ik0xOC4zMzIsMjA1LjA0MlY3MS44MDFoLTcuNzA2QzQuNzY4LDcxLjgwMSwwLDc2LjU2OCwwLDgyLjQyN3YxNjguODk3YzAsMy4yNSwxLjQ1Niw2LjI3NiwzLjk5NCw4LjMwMQ0KCQkJCWMyLjU0NSwyLjAyOSw1LjgyNywyLjc4LDkuMDExLDIuMDU0YzI1LjQ2LTUuODAzLDcwLjEzNS0xMi41NDcsMTEyLjUxMS0yLjE3MWMtMjQuNTAyLTIzLjE5LTU5LjEtMjcuMjkyLTgwLjA4My0yNy4zNDINCgkJCQlDMzAuNDksMjMyLjEzLDE4LjMzMiwyMTkuOTYzLDE4LjMzMiwyMDUuMDQyeiIvPg0KCQk8L2c+DQoJPC9nPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=";
+var home = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE4LjEuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMjcuMDIgMjcuMDIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI3LjAyIDI3LjAyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cGF0aCBzdHlsZT0iZmlsbDojMDMwMTA0OyIgZD0iTTMuNjc0LDI0Ljg3NmMwLDAtMC4wMjQsMC42MDQsMC41NjYsMC42MDRjMC43MzQsMCw2LjgxMS0wLjAwOCw2LjgxMS0wLjAwOGwwLjAxLTUuNTgxDQoJCWMwLDAtMC4wOTYtMC45MiwwLjc5Ny0wLjkyaDIuODI2YzEuMDU2LDAsMC45OTEsMC45MiwwLjk5MSwwLjkybC0wLjAxMiw1LjU2M2MwLDAsNS43NjIsMCw2LjY2NywwDQoJCWMwLjc0OSwwLDAuNzE1LTAuNzUyLDAuNzE1LTAuNzUyVjE0LjQxM2wtOS4zOTYtOC4zNThsLTkuOTc1LDguMzU4QzMuNjc0LDE0LjQxMywzLjY3NCwyNC44NzYsMy42NzQsMjQuODc2eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiMwMzAxMDQ7IiBkPSJNMCwxMy42MzVjMCwwLDAuODQ3LDEuNTYxLDIuNjk0LDBsMTEuMDM4LTkuMzM4bDEwLjM0OSw5LjI4YzIuMTM4LDEuNTQyLDIuOTM5LDAsMi45MzksMA0KCQlMMTMuNzMyLDEuNTRMMCwxMy42MzV6Ii8+DQoJPHBvbHlnb24gc3R5bGU9ImZpbGw6IzAzMDEwNDsiIHBvaW50cz0iMjMuODMsNC4yNzUgMjEuMTY4LDQuMjc1IDIxLjE3OSw3LjUwMyAyMy44Myw5Ljc1MiAJIi8+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==";
+var beer = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjIwLjQ5NXB4IiBoZWlnaHQ9IjIwLjQ5NXB4IiB2aWV3Qm94PSIwIDAgMjAuNDk1IDIwLjQ5NSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjAuNDk1IDIwLjQ5NTsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0xNi4xOTcsOC41NWgtMC45MTFjLTAuMTg4LDAtMC4zNywwLjAxOS0wLjU0OCwwLjA1MlY2LjU0NWMwLTAuMTEyLTAuMDEzLTAuMjIxLTAuMDMzLTAuMzI3DQoJCQljMC41OTktMC40NDMsMC45OTEtMS4xNDgsMC45OTEtMS45NDhjMC0xLjQ5LTEuMzcyLTIuNjg1LTIuODgzLTIuMzg2Yy0wLjUtMC41MjYtMS4yMTMtMC44MjMtMS45NDYtMC43ODYNCgkJCUMxMC4zOTksMC40Miw5LjYyLDAsOC43ODksMEM4LjExNCwwLDcuNDc2LDAuMjY4LDcuMDA2LDAuNzM0QzYuODgxLDAuNjgzLDYuNzUzLDAuNjQyLDYuNjIzLDAuNjEyTDYuNDU5LDAuNTgNCgkJCUM2LjMzMywwLjU2LDYuMjA3LDAuNTQ5LDYuMDc4LDAuNTQ3Yy0wLjE4OS0wLjAxNS0wLjM3MS0wLjAxNC0wLjU1LDAuMDAxSDUuNDc5djAuMDA0QzQuNDA1LDAuNjYsMy41LDEuMjk2LDMuMTQ1LDIuMTgzDQoJCQlDMi4wOSwyLjM4MywxLjI5LDMuMzEyLDEuMjksNC40MjJjMCwwLjc3NSwwLjM5LDEuNDU4LDAuOTgyLDEuODdDMi4yNiw2LjM3NSwyLjI0Nyw2LjQ1OCwyLjI0Nyw2LjU0NXYxMi4zMDkNCgkJCWMwLDAuOTA1LDAuNzM2LDEuNjQyLDEuNjQxLDEuNjQyaDkuMjA4YzAuOTA1LDAsMS42NDItMC43MzYsMS42NDItMS42NDJWMTYuMzRjMC4xNzgsMC4wMzMsMC4zNiwwLjA1MywwLjU0OCwwLjA1M2gwLjkxMQ0KCQkJYzEuNjU5LDAsMy4wMDktMS4zNTEsMy4wMDktMy4wMXYtMS44MjJDMTkuMjA2LDkuOTAxLDE3Ljg1Niw4LjU1LDE2LjE5Nyw4LjU1eiBNMTMuNjQzLDE4Ljg1NGMwLDAuMzAyLTAuMjQ0LDAuNTQ3LTAuNTQ3LDAuNTQ3DQoJCQlIMy44ODhjLTAuMzAyLDAtMC41NDctMC4yNDUtMC41NDctMC41NDdWNi41NDVjMC0wLjMwMiwwLjI0NS0wLjU0NywwLjU0Ny0wLjU0N2g5LjIwOGMwLjMwMywwLDAuNTQ3LDAuMjQ1LDAuNTQ3LDAuNTQ3VjE4Ljg1NHoNCgkJCSBNMTQuMTMsNS4yOEwxNC4xMyw1LjI4Yy0wLjI4Mi0wLjIzMi0wLjY0LTAuMzc3LTEuMDM0LTAuMzc3SDMuODg4Yy0wLjQxNywwLTAuNzkzLDAuMTYxLTEuMDgzLDAuNDE3DQoJCQlDMi41NDksNS4xMDMsMi4zODQsNC43ODMsMi4zODQsNC40MjJjMC0wLjY1MSwwLjUyOS0xLjE4MiwxLjE4MS0xLjE4NGwwLjQ0OC0wLjAwMkw0LjEsMi43OTdDNC4yMDIsMi4yODMsNC43MzUsMS43NCw1LjU1MiwxLjY0NQ0KCQkJaDAuNjAzYzAuMjQ1LDAuMDE3LDAuNDgxLDAuMDk3LDAuNjg5LDAuMjM0bDAuNDUyLDAuMjk5bDAuMzAzLTAuNDQ5QzcuODY3LDEuMzMyLDguMzEyLDEuMDk0LDguNzksMS4wOTQNCgkJCWMwLjU1NiwwLDEuMDUsMC4zMTUsMS4yOTIsMC44MjNsMC4xODQsMC4zODdsMC40Mi0wLjA4NmMwLjU3MS0wLjExNSwxLjE1NCwwLjEyNCwxLjQ3OCwwLjU5N2wwLjIzOSwwLjM1MmwwLjQtMC4xNDcNCgkJCWMwLjE2MS0wLjA1OSwwLjMxMi0wLjA4OCwwLjQ2MS0wLjA4OGMwLjczNywwLDEuMzM4LDAuNiwxLjMzOCwxLjMzOEMxNC42MDIsNC42NzUsMTQuNDE2LDUuMDM1LDE0LjEzLDUuMjh6IE0xNy41NjUsMTMuMzgzDQoJCQljMCwwLjc1NC0wLjYxMywxLjM2OC0xLjM2OCwxLjM2OGgtMC45MTFjLTAuMTk1LDAtMC4zOC0wLjA0Mi0wLjU0OC0wLjExNnYtNC4zMjZjMC4xNjgtMC4wNzQsMC4zNTMtMC4xMTYsMC41NDgtMC4xMTZoMC45MTENCgkJCWMwLjc1NCwwLDEuMzY4LDAuNjEzLDEuMzY4LDEuMzY4VjEzLjM4M3oiLz4NCgkJPHJlY3QgeD0iMy44ODgiIHk9IjguMDAzIiB3aWR0aD0iOS4yMSIgaGVpZ2h0PSIxMC44NTEiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==";
+var dance = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjI0OC45MTRweCIgaGVpZ2h0PSIyNDguOTE0cHgiIHZpZXdCb3g9IjAgMCAyNDguOTE0IDI0OC45MTQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI0OC45MTQgMjQ4LjkxNDsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik0yMDEuNzExLDQ5LjU4M2MtNS40NiwwLTkuODk1LDMuNzcxLTkuODk1LDguNDE5YzAsNC42NTMsNC40MzUsOC40MTksOS44OTUsOC40MTljNS4zMTYsMCw5LjY0My0zLjU2Niw5Ljg3Ni04LjAzMg0KCQkJYzUuMTA1LTEzLjYsNC4xMDYtMjQuMDc4LDMuMDQzLTI5LjEzN2MtMC43NDctMy41MzMtNC4yLTYuMjk1LTcuODUxLTYuMjk1bC0yMy4yNy0wLjAxYy0xLjg1NywwLTMuNTk0LDAuNzI0LTQuOSwyLjAzDQoJCQljLTEuMzgyLDEuMzkxLTIuMTM4LDMuMjc2LTIuMTI5LDUuMzJjMC4wMzgsNS42OTktMS4yMjMsMTMuMzA2LTIuMzA1LDE4Ljc3NmMtMC45MDYtMC4yMzMtMS44NzctMC4zNjQtMi44ODUtMC4zNjQNCgkJCWMtNS40NjEsMC05Ljg5NSwzLjc3MS05Ljg5NSw4LjQyNGMwLDQuNjQ4LDQuNDM4LDguNDE5LDkuODk1LDguNDE5YzUuMDU1LDAsOS4yMTMtMy4yMiw5LjgxOS03LjM3OGwwLjA3NSwwLjAxOQ0KCQkJYzAuMTYzLTAuNjUzLDMuODI2LTE1LjUyMyw0LjA3OS0yNi40NTNsMjAuODk4LDAuMDA5YzAuNjY4LDMuNjE3LDEuMTExLDkuOTgzLTEuMTI0LDE4LjMyMw0KCQkJQzIwMy45ODgsNDkuNzY1LDIwMi44NzgsNDkuNTgzLDIwMS43MTEsNDkuNTgzeiIvPg0KCQk8cGF0aCBkPSJNMzUuODY0LDEzNy44MzJjMi4wMjEsNC4xOTEsNy42NDksNS42NjEsMTIuNTY4LDMuMjk1YzQuNzkzLTIuMzAxLDcuMTQxLTcuMzkzLDUuNDE0LTExLjUxOQ0KCQkJYy0xLjMtMTQuNDcyLTYuNzQ0LTIzLjQ3NS05Ljg5Ni0yNy41NzdjLTIuMjA4LTIuODUyLTYuNTE1LTMuODUxLTkuODA4LTIuMjY0bC0yMC45NjksMTAuMDg1DQoJCQljLTEuNjczLDAuODAzLTIuOTI2LDIuMjA4LTMuNTMzLDMuOTU4Yy0wLjY0NCwxLjg0OS0wLjUwMSwzLjg4MywwLjM5Miw1LjcxN2MyLjUwNCw1LjEyLDQuNjY5LDEyLjUyMiw2LjA2LDE3LjkyMQ0KCQkJYy0wLjkyMSwwLjE4My0xLjg1MSwwLjQ4NS0yLjc1MywwLjkyNWMtNC45MTcsMi4zNjYtNy4yNzMsNy42ODctNS4yNTUsMTEuODc3YzIuMDIxLDQuMTkxLDcuNjQ1LDUuNjY2LDEyLjU2OSwzLjI5NQ0KCQkJYzQuNTQ4LTIuMTg4LDYuOS02LjkwMiw1LjY0Mi0xMC45MDZsMC4wNzctMC4wMTVjLTAuMTMzLTAuNjYyLTMuMjg4LTE1LjY0NC03Ljc5OS0yNS42MDhsMTguODMtOS4wNTQNCgkJCWMyLjE3LDIuOTczLDUuMzM0LDguNTEzLDYuOTM1LDE2Ljk5OGMtMS4wNzYsMC4xNjgtMi4xNTYsMC40OS0zLjIwOCwwLjk5NEMzNi4yMDIsMTI4LjMyLDMzLjg0NiwxMzMuNjQyLDM1Ljg2NCwxMzcuODMyeiIvPg0KCQk8Y2lyY2xlIGN4PSIxMTAuNTY1IiBjeT0iMzguMTM2IiByPSIyMS4wMDQiLz4NCgkJPHBhdGggZD0iTTE0LjMzNywyMzIuODY4aDIyMC4yMzljNy45MjEsMCwxNC4zMzgtNi4yNzIsMTQuMzM4LTE0LjAyMWMwLTcuNzQ3LTYuNDE3LTE0LjAyNC0xNC4zMzgtMTQuMDI0aC02Ny4yNjINCgkJCWMwLjM5My0wLjE0NSwwLjc5NC0wLjI4LDEuMTc2LTAuNTA0YzMuMjkxLTEuOTkzLDQuMzUxLTYuMjc3LDIuMzU3LTkuNTcybC0zOS4yNzgtNjUuMDE3di0zMi4xMQ0KCQkJYzE3Ljg4LDE2LjEzOSwyNi41MjMsNDEuOTg1LDI2LjY3Nyw0Mi40NTdjMC45NTcsMi45NDksMy42OTIsNC44MjUsNi42MzcsNC44MjVjMC43MDUsMCwxLjQzNC0wLjEwNiwyLjEzOC0wLjMzNg0KCQkJYzMuNjczLTEuMTgxLDUuNjgtNS4xMTUsNC40OTQtOC43NzNjLTAuNTg4LTEuODA3LTEyLjY2MS0zOC4yNjEtMzkuOTY5LTU1LjY5N2MtMC4xMTEtOS41MjUtNy44NTItMTcuMjE3LTE3LjQwNi0xNy4yMTdoLTcuMTU5DQoJCQljLTQuNTg3LDAtOC43MzIsMS44MTEtMTEuODQzLDQuNzA5Yy0yMS40NjQtMTUuMzIyLTMxLjc5LTQ2LjE5NC0zMS45NjItNDYuNzE3Yy0xLjE5LTMuNjU0LTUuMTA4LTUuNjctOC43NzQtNC40ODUNCgkJCWMtMy42NzEsMS4xODUtNS42NzgsNS4xMTUtNC40OTIsOC43NzRjMC41ODEsMS44MDEsMTIuNTY0LDM3Ljk4LDM5LjY0Miw1NS41MDF2NTUuNzkxTDc2LjA0NSwxNjAuMTUNCgkJCWMtMS4xMDQsMS45MzctMS4yMTgsNC4yNzktMC4yOTYsNi4zMTlsMTUuNjgxLDM0Ljc1MWMwLjc5MywxLjc2LDIuMjQ1LDIuOTc4LDMuOTE4LDMuNjAzSDE0LjMzNw0KCQkJQzYuNDE5LDIwNC44MjMsMCwyMTEuMTA1LDAsMjE4Ljg0OEMwLDIyNi41OTEsNi40MTksMjMyLjg2OCwxNC4zMzcsMjMyLjg2OHogTTg5LjkxNCwxNjMuOTY4bDEzLjMwMS0yMy4zMzVoMTguNjQ3bDM3LjA0Nyw2MS4zMjUNCgkJCWMwLjg0NSwxLjM5NiwyLjExNCwyLjMzOCwzLjUyOCwyLjg3aC02Mi4xNTZjMC4xMTktMC4wNDcsMC4yNDgtMC4wNjUsMC4zNjctMC4xMTdjMy41MDctMS41ODIsNS4wNzUtNS43MTIsMy40ODktOS4yMjINCgkJCUw4OS45MTQsMTYzLjk2OHoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==";
+var drink = "data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMyIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNjQgNjQiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNjQgNjQiIHdpZHRoPSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0ibTE3LjYwNiAxLjIwNS0xLjIxMiAxLjU5IDEzLjM5MyAxMC4yMDVoMy4zMDF6Ii8+PHBhdGggZD0ibTIzIDI0YzAgNC45NjIgNC4wMzcgOSA5IDlzOS00LjAzOCA5LTl2LTJjMC0uNTUyLjQ0Ny0xIDEtMSA0LjYyNSAwIDguNDQ1LTMuNTA2IDguOTQ0LThoLTE3Ljg1Nmw1LjUxOCA0LjIwNS0xLjIxMyAxLjU5MS03LjYwNi01Ljc5NmgtMTYuNzMxYy40OTkgNC40OTQgNC4zMTkgOCA4Ljk0NCA4IC41NTMgMCAxIC40NDggMSAxem02LThjMi4yMDYgMCA0IDEuNzk0IDQgNHMtMS43OTQgNC00IDQtNC0xLjc5NC00LTQgMS43OTQtNCA0LTR6Ii8+PHBhdGggZD0ibTMzIDU3di0yMi4wNTFjLS4zMy4wMy0uNjYyLjA1MS0xIC4wNTFzLS42Ny0uMDIxLTEtLjA1MXYyMi4wNTFjMCAuNDA0LS4yNDMuNzY4LS42MTUuOTIzbC03LjM4NSAzLjA3N2gxOGwtNy4zODUtMy4wNzdjLS4zNzItLjE1NS0uNjE1LS41MTktLjYxNS0uOTIzeiIvPjxjaXJjbGUgY3g9IjI5IiBjeT0iMjAiIHI9IjIiLz48Y2lyY2xlIGN4PSI0MyIgY3k9IjQ5IiByPSIyIi8+PGNpcmNsZSBjeD0iNTIiIGN5PSIzOCIgcj0iNSIvPjxjaXJjbGUgY3g9IjE3IiBjeT0iNDQiIHI9IjIiLz48Y2lyY2xlIGN4PSI4IiBjeT0iMzMiIHI9IjUiLz48L3N2Zz4=";
+var drunk = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDI5OS40NTMgMjk5LjQ1MyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjk5LjQ1MyAyOTkuNDUzOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8ZyBpZD0iWE1MSURfMTQ1NF8iPg0KCTxnPg0KCQk8Zz4NCgkJCTxjaXJjbGUgY3g9IjE3Ny42NjciIGN5PSIzMy41MDciIHI9IjMzLjUwOCIvPg0KCQkJPHBhdGggZD0iTTIzNC4xOTQsOTYuNjE1bC00OS43MzIsMTYuODY2bC0zOC45Ny0zMC4wNzZsMzQuMjI0LDE0LjQxMmMtMC4xMDctOS44ODUtNi43MjMtMTguODk3LTE2LjczNi0yMS41OTlsLTM4Ljk3Mi0xMC41MTUNCgkJCQljLTEyLjA2OS0zLjI1Ny0yNC40OTMsMy44ODgtMjcuNzUsMTUuOTU4Yy0wLjY5NCwyLjU3Mi0xNi44NDQsNjEuMjktMjcuMDgzLDk4LjU0MmMtMi40MTEsOC43NzQtMi41MDEsMTguMDY0LTAuMjE4LDI2Ljg3Mw0KCQkJCWMzLjMxOCwxMi44MDQsNy45NzksMzAuNzk0LDE0LjQ2NCw1NS44MTlsLTUxLjc1NS0wLjI3MWMtMC4wMzIsMC0wLjA2NSwwLTAuMDk3LDBjLTEwLjAxNiwwLTE4LjE2Miw4LjA5My0xOC4yMTUsMTguMTIxDQoJCQkJYy0wLjA1MywxMC4wNjEsOC4wNjEsMTguMjYsMTguMTIxLDE4LjMxMmw3NS40MjEsMC4zOTVjMC4wMzEsMCwwLjA2NCwwLDAuMDk1LDBjMTEuOTE3LTAuMDAxLDIwLjYxOS0xMS4yNjksMTcuNjM1LTIyLjc4Ng0KCQkJCWwtMTguNjg0LTcyLjEwNmwxMi42ODYsMy40MjNsMTcuMDU1LDY1LjgxOGMyLjI4LDguOCwwLjMyNSwxOC4zMzMtNS4yMjMsMjUuNTMxbDIyLjc5NiwwLjEyYzAuMDMxLDAsMC4wNjQsMCwwLjA5NSwwDQoJCQkJYzExLjkxNi0wLjAwMSwyMC42MTktMTEuMjY5LDE3LjYzNS0yMi43ODZsLTE4LjkzMS03My4wNjJsMTIuNzI5LTQ3LjE3OWMtMS40MTktMS40MTksMS40NDcsMi4xODUtMzcuODQtNDguOTg1bDQ1LjQxMywzNS4wNDkNCgkJCQljNC4wMjksMy4xMSw5LjM0MSwzLjk4OSwxNC4xNTEsMi4zNTlsNTcuNDM5LTE5LjQ4MWM3Ljk0MS0yLjY5MiwxMi4xOTUtMTEuMzExLDkuNTAyLTE5LjI1Mg0KCQkJCUMyNTAuNzUzLDk4LjE3NywyNDIuMTM0LDkzLjkyMywyMzQuMTk0LDk2LjYxNXoiLz4NCgkJCTxwYXRoIGQ9Ik0yODAuNzI2LDYzLjgxM2gtNDEuNjU3Yy0yLjk2OSwwLTUuMzc1LDIuNDA2LTUuMzc1LDUuMzc1YzAsMi45NjksMi40MDcsNS4zNzUsNS4zNzUsNS4zNzVoMC40NjRsMC41MjYsNi4wODENCgkJCQljMTIuMjc1LDAuNDAzLDIzLjU4NSw4LjI3OSwyNy43NjMsMjAuNTk3YzMuNjYxLDEwLjc5NiwwLjg5NiwyMi4yMTYtNi4yMzYsMzAuMTE3aDEwLjA2NmMyLjA5MiwwLDMuODM2LTEuNiw0LjAxNi0zLjY4NA0KCQkJCWw0LjU5Mi01My4xMTFoMC40NjVjMi45NjksMCw1LjM3NS0yLjQwNiw1LjM3NS01LjM3NVMyODMuNjk0LDYzLjgxMywyODAuNzI2LDYzLjgxM3oiLz4NCgkJPC9nPg0KCTwvZz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjwvc3ZnPg0K";
+var bed = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDkwLjcgNDkwLjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MC43IDQ5MC43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTQzNi4yLDE1NC42SDE4Mi40Yy0xMi40LDAtMzMuMSw0LjctMzMuMSwzNi42VjI0MGgzMjB2LTQ4LjhDNDY5LjMsMTU5LjQsNDQ4LjYsMTU0LjYsNDM2LjIsMTU0LjZ6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxwb2x5Z29uIHBvaW50cz0iODAuMywyNTAuNiAzMiwyNTAuNiAzMiw4MCAwLDgwIDAsNDEwLjcgMzIsNDEwLjcgMzIsMzI1LjMgNDU4LjcsMzI1LjMgNDU4LjcsNDEwLjYgNDkwLjcsNDEwLjYgNDkwLjcsMjUwLjYgCQkNCgkJCSIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8Y2lyY2xlIGN4PSI4NS4zIiBjeT0iMTk3LjMiIHI9IjQ0LjciLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==";
+
+am4core.ready(function() {
+    var chart = am4core.create("lineProcess", am4plugins_timeline.CurveChart);
+    chart.curveContainer.padding(100, 20, 50, 20);
+    chart.maskBullets = false;
+
+
+    var colorSet = new am4core.ColorSet();
+
+    chart.dateFormatter.inputDateFormat = "yyyy-MM-dd HH:mm";
+    chart.dateFormatter.dateFormat = "HH";
+    chart.data =$scope.lpChart;
+    
+    chart.fontSize = 10;
+    chart.tooltipContainer.fontSize = 10;
+
+    var categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "category";
+    categoryAxis.renderer.grid.template.disabled = true;
+    categoryAxis.renderer.labels.template.paddingRight = 25;
+    categoryAxis.renderer.minGridDistance = 10;
+    categoryAxis.renderer.innerRadius = 10;
+    categoryAxis.renderer.radius = 30;
+
+    var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+
+
+    dateAxis.renderer.points = getPoints();
+
+
+    dateAxis.renderer.autoScale = false;
+    dateAxis.renderer.autoCenter = false;
+    dateAxis.renderer.minGridDistance = 70;
+    dateAxis.baseInterval = { count: 5, timeUnit: "minute" };
+    dateAxis.renderer.tooltipLocation = 0;
+    dateAxis.renderer.line.strokeDasharray = "1,4";
+    dateAxis.renderer.line.strokeOpacity = 0.5;
+    dateAxis.tooltip.background.fillOpacity = 0.2;
+    dateAxis.tooltip.background.cornerRadius = 5;
+    dateAxis.tooltip.label.fill = new am4core.InterfaceColorSet().getFor("alternativeBackground");
+    dateAxis.tooltip.label.paddingTop = 7;
+    dateAxis.endLocation = 0;
+    dateAxis.startLocation = -0.5;
+    dateAxis.min = new Date(2019, 0, 9, 23, 55).getTime();
+    dateAxis.max = new Date(2019, 0, 11, 7, 10).getTime();    
+
+    var labelTemplate = dateAxis.renderer.labels.template;
+    labelTemplate.verticalCenter = "middle";
+    labelTemplate.fillOpacity = 0.6;
+    labelTemplate.background.fill = new am4core.InterfaceColorSet().getFor("background");
+    labelTemplate.background.fillOpacity = 1;
+    labelTemplate.fill = new am4core.InterfaceColorSet().getFor("text");
+    labelTemplate.padding(7, 7, 7, 7);
+
+    var series = chart.series.push(new am4plugins_timeline.CurveColumnSeries());
+    series.columns.template.height = am4core.percent(30);
+
+    series.dataFields.openDateX = "start";
+    series.dataFields.dateX = "end";
+    series.dataFields.categoryY = "category";
+    series.baseAxis = categoryAxis;
+    series.columns.template.propertyFields.fill = "color"; // get color from data
+    series.columns.template.propertyFields.stroke = "color";
+    series.columns.template.strokeOpacity = 0;
+    series.columns.template.fillOpacity = 0.6;
+
+    var imageBullet1 = series.bullets.push(new am4plugins_bullets.PinBullet());
+    imageBullet1.background.radius = 18;
+    imageBullet1.locationX = 1;
+    imageBullet1.propertyFields.stroke = "color";
+    imageBullet1.background.propertyFields.fill = "color";
+    imageBullet1.image = new am4core.Image();
+    imageBullet1.image.propertyFields.href = "icon";
+    imageBullet1.image.scale = 0.7;
+    imageBullet1.circle.radius = am4core.percent(100);
+    imageBullet1.background.fillOpacity = 0.8;
+    imageBullet1.background.strokeOpacity = 0;
+    imageBullet1.dy = -2;
+    imageBullet1.background.pointerBaseWidth = 10;
+    imageBullet1.background.pointerLength = 10
+    imageBullet1.tooltipText = "{text}";
+
+    series.tooltip.pointerOrientation = "up";
+
+    imageBullet1.background.adapter.add("pointerAngle", (value, target) => {
+        if (target.dataItem) {
+            var position = dateAxis.valueToPosition(target.dataItem.openDateX.getTime());
+            return dateAxis.renderer.positionToAngle(position);
+        }
+        return value;
+    });
+
+    var hs = imageBullet1.states.create("hover")
+    hs.properties.scale = 1.3;
+    hs.properties.opacity = 1;
+
+    var textBullet = series.bullets.push(new am4charts.LabelBullet());
+    textBullet.label.propertyFields.text = "text";
+    textBullet.disabled = true;
+    textBullet.propertyFields.disabled = "textDisabled";
+    textBullet.label.strokeOpacity = 0;
+    textBullet.locationX = 1;
+    textBullet.dy = - 100;
+    textBullet.label.textAlign = "middle";
+
+    chart.scrollbarX = new am4core.Scrollbar();
+    chart.scrollbarX.align = "center"
+    chart.scrollbarX.width = am4core.percent(75);
+    chart.scrollbarX.parent = chart.curveContainer;
+    chart.scrollbarX.height = 300;
+    chart.scrollbarX.orientation = "vertical";
+    chart.scrollbarX.x = 128;
+    chart.scrollbarX.y = -140;
+    chart.scrollbarX.isMeasured = false;
+    chart.scrollbarX.opacity = 0.5;
+
+    var cursor = new am4plugins_timeline.CurveCursor();
+    chart.cursor = cursor;
+    cursor.xAxis = dateAxis;
+    cursor.yAxis = categoryAxis;
+    cursor.lineY.disabled = true;
+    cursor.lineX.disabled = true;
+
+    dateAxis.renderer.tooltipLocation2 = 0;
+    categoryAxis.cursorTooltipEnabled = false;
+
+    chart.zoomOutButton.disabled = true;
+
+    var previousBullet;
+
+    chart.events.on("inited", function() {
+        setTimeout(function() {
+            hoverItem(series.dataItems.getIndex(0));
+        }, 2000)
+    })
+
+    function hoverItem(dataItem) {
+        var bullet = dataItem.bullets.getKey(imageBullet1.uid);
+        var index = dataItem.index;
+
+        if (index >= series.dataItems.length - 1) {
+            index = -1;
+        }
+
+        if (bullet) {
+
+            if (previousBullet) {
+                previousBullet.isHover = false;
+            }
+
+            bullet.isHover = true;
+
+            previousBullet = bullet;
+        }
+        setTimeout(
+            function() {
+                hoverItem(series.dataItems.getIndex(index + 1))
+            }, 1000);
+    }
+
+});
+
+
+function getPoints() {
+
+    var points = [{ x: -1300, y: 200 }, { x: 0, y: 200 }];
+
+    var w = 400;
+    var h = 400;
+    var levelCount = 4;
+
+    var radius = am4core.math.min(w / (levelCount - 1) / 2, h / 2);
+    var startX = radius;
+
+    for (var i = 0; i < 25; i++) {
+        var angle = 0 + i / 25 * 90;
+        var centerPoint = { y: 200 - radius, x: 0 }
+        points.push({ y: centerPoint.y + radius * am4core.math.cos(angle), x: centerPoint.x + radius * am4core.math.sin(angle) });
+    }
+
+
+    for (var i = 0; i < levelCount; i++) {
+
+        if (i % 2 != 0) {
+            points.push({ y: -h / 2 + radius, x: startX + w / (levelCount - 1) * i })
+            points.push({ y: h / 2 - radius, x: startX + w / (levelCount - 1) * i })
+
+            var centerPoint = { y: h / 2 - radius, x: startX + w / (levelCount - 1) * (i + 0.5) }
+            if (i < levelCount - 1) {
+                for (var k = 0; k < 50; k++) {
+                    var angle = -90 + k / 50 * 180;
+                    points.push({ y: centerPoint.y + radius * am4core.math.cos(angle), x: centerPoint.x + radius * am4core.math.sin(angle) });
+                }
+            }
+
+            if (i == levelCount - 1) {
+                points.pop();
+                points.push({ y: -radius, x: startX + w / (levelCount - 1) * i })
+                var centerPoint = { y: -radius, x: startX + w / (levelCount - 1) * (i + 0.5) }
+                for (var k = 0; k < 25; k++) {
+                    var angle = -90 + k / 25 * 90;
+                    points.push({ y: centerPoint.y + radius * am4core.math.cos(angle), x: centerPoint.x + radius * am4core.math.sin(angle) });
+                }
+                points.push({ y: 0, x: 1300 });
+            }
+
+        }
+        else {
+            points.push({ y: h / 2 - radius, x: startX + w / (levelCount - 1) * i })
+            points.push({ y: -h / 2 + radius, x: startX + w / (levelCount - 1) * i })
+            var centerPoint = { y: -h / 2 + radius, x: startX + w / (levelCount - 1) * (i + 0.5) }
+            if (i < levelCount - 1) {
+                for (var k = 0; k < 50; k++) {
+                    var angle = -90 - k / 50 * 180;
+                    points.push({ y: centerPoint.y + radius * am4core.math.cos(angle), x: centerPoint.x + radius * am4core.math.sin(angle) });
+                }
+            }
+        }
+    }
+
+    return points;
+}
+
+
+    });
+
+
+    }]).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		controller('sunburstController',['$scope','$http','$routeParams',function($scope,$http,$routeParams){
+      //$scope.person=$scope.people[$routeParams.id]
+
+      
+      $http.get('http://movie-data-analysis-backend.herokuapp.com/api/data/bubble_amchart/'+$scope.StartYear + '/'+$scope.EndYear+ '/'+$scope.Lang).success(function(data){
+                //$scope.people=data
+                console.log(data)
+
+                
+              
+
+              // Themes begin
+              am4core.useTheme(am4themes_animated);
+              // Themes end
+
+
+              var chart = am4core.create("sunburst", am4charts.XYChart);
+
+              var valueAxisX = chart.xAxes.push(new am4charts.ValueAxis());
+              valueAxisX.renderer.ticks.template.disabled = true;
+              valueAxisX.renderer.axisFills.template.disabled = true;
+
+              var valueAxisY = chart.yAxes.push(new am4charts.ValueAxis());
+              valueAxisY.renderer.ticks.template.disabled = true;
+              valueAxisY.renderer.axisFills.template.disabled = true;
+
+              var series = chart.series.push(new am4charts.LineSeries());
+              series.dataFields.valueX = "x";
+              series.dataFields.valueY = "y";
+              series.dataFields.value = "value";
+              series.strokeOpacity = 0;
+              series.sequencedInterpolation = true;
+              series.tooltip.pointerOrientation = "vertical";
+
+              var bullet = series.bullets.push(new am4core.Circle());
+              bullet.fill = am4core.color("#ff0000");
+              bullet.propertyFields.fill = "color";
+              bullet.strokeOpacity = 0;
+              bullet.strokeWidth = 2;
+              bullet.fillOpacity = 0.5;
+              bullet.stroke = am4core.color("#ffffff");
+              bullet.hiddenState.properties.opacity = 0;
+              bullet.tooltipText = "[bold]{title}:[/]\nPopulation: {value.value}\nIncome: {valueX.value}\nLife expectancy:{valueY.value}";
+
+              var outline = chart.plotContainer.createChild(am4core.Circle);
+              outline.fillOpacity = 0;
+              outline.strokeOpacity = 0.8;
+              outline.stroke = am4core.color("#ff0000");
+              outline.strokeWidth = 2;
+              outline.hide(0);
+
+              var blurFilter = new am4core.BlurFilter();
+              outline.filters.push(blurFilter);
+
+              bullet.events.on("over", function(event) {
+                  var target = event.target;
+                  outline.radius = target.pixelRadius + 2;
+                  outline.x = target.pixelX;
+                  outline.y = target.pixelY;
+                  outline.show();
+              })
+
+              bullet.events.on("out", function(event) {
+                  outline.hide();
+              })
+
+              var hoverState = bullet.states.create("hover");
+              hoverState.properties.fillOpacity = 1;
+              hoverState.properties.strokeOpacity = 1;
+
+              series.heatRules.push({ target: bullet, min: 2, max: 60, property: "radius" });
+
+              bullet.adapter.add("tooltipY", function (tooltipY, target) {
+                  return -target.radius;
+              })
+
+              chart.cursor = new am4charts.XYCursor();
+              chart.cursor.behavior = "zoomXY";
+              chart.cursor.snapToSeries = series;
+
+              chart.scrollbarX = new am4core.Scrollbar();
+              chart.scrollbarY = new am4core.Scrollbar();
+              chart.data = data;
+
+            });
+
+
+
+  		}]).
+
+
+
+
+
+
+
+
+
+
+		controller('bubbleController',['$scope','$http',function($scope,$http){
+      /**
+              * ---------------------------------------
+              * This demo was created using amCharts 4.
+              * 
+              * For more information visit:
+              * https://www.amcharts.com/
+              * 
+              * Documentation is available at:
+              * https://www.amcharts.com/docs/v4/
+              * ---------------------------------------
+              */
+              $(document).ready(function(){
+                $('.modal').modal();
+              });
+              
+
+              $http.get('http://movie-data-analysis-backend.herokuapp.com/api/data/bubble_amchart/'+$scope.StartYear + '/'+$scope.EndYear+ '/'+$scope.Lang).success(function(data){
+                //$scope.people=data
+                console.log(data)
+
+              // Themes begin
+              am4core.useTheme(am4themes_animated);
+              // Themes end
+
+
+              var chart = am4core.create("bubblechart", am4charts.XYChart);
+
+              var valueAxisX = chart.xAxes.push(new am4charts.ValueAxis());
+              valueAxisX.renderer.ticks.template.disabled = true;
+              valueAxisX.renderer.axisFills.template.disabled = true;
+
+              var valueAxisY = chart.yAxes.push(new am4charts.ValueAxis());
+              valueAxisY.renderer.ticks.template.disabled = true;
+              valueAxisY.renderer.axisFills.template.disabled = true;
+
+              var series = chart.series.push(new am4charts.LineSeries());
+              series.dataFields.valueX = "x";
+              series.dataFields.valueY = "y";
+              series.dataFields.value = "value";
+              series.strokeOpacity = 0;
+              series.sequencedInterpolation = true;
+              series.tooltip.pointerOrientation = "vertical";
+
+              var bullet = series.bullets.push(new am4core.Circle());
+              bullet.fill = am4core.color("#ff0000");
+              bullet.propertyFields.fill = "color";
+              bullet.strokeOpacity = 0;
+              bullet.strokeWidth = 2;
+              bullet.fillOpacity = 0.5;
+              bullet.stroke = am4core.color("#ffffff");
+              bullet.hiddenState.properties.opacity = 0;
+              bullet.tooltipText = "[bold]{title}:[/]\nRating: {value.value}\nBudget: {valueX.value}\nProfit:{valueY.value}";
+
+              var outline = chart.plotContainer.createChild(am4core.Circle);
+              outline.fillOpacity = 0;
+              outline.strokeOpacity = 0.8;
+              outline.stroke = am4core.color("#ff0000");
+              outline.strokeWidth = 2;
+              outline.hide(0);
+
+              var blurFilter = new am4core.BlurFilter();
+              outline.filters.push(blurFilter);
+
+              bullet.events.on("over", function(event) {
+                  var target = event.target;
+                  outline.radius = target.pixelRadius + 2;
+                  outline.x = target.pixelX;
+                  outline.y = target.pixelY;
+                  outline.show();
+              })
+
+              bullet.events.on("out", function(event) {
+                  outline.hide();
+              })
+
+              var hoverState = bullet.states.create("hover");
+              hoverState.properties.fillOpacity = 1;
+              hoverState.properties.strokeOpacity = 1;
+
+              series.heatRules.push({ target: bullet, min: 2, max: 60, property: "radius" });
+
+              bullet.adapter.add("tooltipY", function (tooltipY, target) {
+                  return -target.radius;
+              })
+
+              chart.cursor = new am4charts.XYCursor();
+              chart.cursor.behavior = "zoomXY";
+              chart.cursor.snapToSeries = series;
+
+              chart.scrollbarX = new am4core.Scrollbar();
+              chart.scrollbarY = new am4core.Scrollbar();
+              chart.data = data;
+
+            });
+              
+          }]).
+    controller('bargraphController',['$scope','$http',function($scope,$http){
+        // Themes begin
+        $http.get('http://movie-data-analysis-backend.herokuapp.com/api/data/bar_amchart/'+$scope.StartYear + '/'+$scope.EndYear+ '/'+$scope.Lang).success(function(data){
+                //$scope.people=data
+                console.log(data)
+        
+            am4core.useTheme(am4themes_animated);
+            // Themes end
+
+
+
+
+            var chart = am4core.create('bargraph', am4charts.XYChart);
+            chart.colors.step = 2;
+
+            chart.legend = new am4charts.Legend();
+            chart.legend.position = 'top';
+            chart.legend.paddingBottom = 20;
+            chart.legend.labels.template.maxWidth = 135;
+
+            var xAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+            xAxis.dataFields.category = 'category';
+            //xAxis.dataFields.template.rotation= 45;
+            xAxis.renderer.cellStartLocation = 0.1;
+            xAxis.renderer.cellEndLocation = 0.9;
+            xAxis.renderer.grid.template.location = 0;
+            //xAxis.renderer.grid.template.rotation = 90;
+
+            var yAxis = chart.yAxes.push(new am4charts.ValueAxis());
+            yAxis.min = 0;
+
+            function createSeries(value, name) {
+                var series = chart.series.push(new am4charts.ColumnSeries());
+                series.dataFields.valueY = value;
+                series.dataFields.categoryX = 'category';
+                series.name = name;
+                
+
+                series.events.on("hidden", arrangeColumns);
+                series.events.on("shown", arrangeColumns);
+
+                var bullet = series.bullets.push(new am4charts.LabelBullet())
+                bullet.interactionsEnabled = false
+                bullet.dy = 30;
+                bullet.label.text = ''
+                bullet.label.fill = am4core.color('#ffffff')
+
+                return series;
+            }
+            chart.data = data;
+            chart.data1 = [
+                {
+                    category: 'Place #1',
+                    first: 40,
+                    second: 55,
+                    third: 60
+                },
+                {
+                    category: 'Place #2',
+                    first: 30,
+                    second: 78,
+                    third: 69
+                },
+                {
+                    category: 'Place #3',
+                    first: 27,
+                    second: 40,
+                    third: 45
+                },
+                {
+                    category: 'Place #4',
+                    first: 50,
+                    second: 33,
+                    third: 22
+                }
+            ]
+
+
+            createSeries('first', 'Average profit');
+            createSeries('second', 'Average Rating');
+            createSeries('third', 'Average Popularity');
+
+            function arrangeColumns() {
+
+                var series = chart.series.getIndex(0);
+
+                var w = 1 - xAxis.renderer.cellStartLocation - (1 - xAxis.renderer.cellEndLocation);
+                if (series.dataItems.length > 1) {
+                    var x0 = xAxis.getX(series.dataItems.getIndex(0), "categoryX");
+                    var x1 = xAxis.getX(series.dataItems.getIndex(1), "categoryX");
+                    var delta = ((x1 - x0) / chart.series.length) * w;
+                    if (am4core.isNumber(delta)) {
+                        var middle = chart.series.length / 2;
+
+                        var newIndex = 0;
+                        chart.series.each(function(series) {
+                            if (!series.isHidden && !series.isHiding) {
+                                series.dummyData = newIndex;
+                                newIndex++;
+                            }
+                            else {
+                                series.dummyData = chart.series.indexOf(series);
+                            }
+                        })
+                        var visibleCount = newIndex;
+                        var newMiddle = visibleCount / 2;
+
+                        chart.series.each(function(series) {
+                            var trueIndex = chart.series.indexOf(series);
+                            var newIndex = series.dummyData;
+
+                            var dx = (newIndex - trueIndex + middle - newMiddle) * delta
+
+                            series.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                            series.bulletsContainer.animate({ property: "dx", to: dx }, series.interpolationDuration, series.interpolationEasing);
+                        })
+                    }
+                }
+            }
+          });
+
+    }]).
+    controller('globeController',['$scope',function($scope){
+			
+      var globe,
+                globeCount = 0;
+
+
+            function createGlobe(){
+                var newData = [];
+                globeCount++;
+                $("#globe canvas").remove();
+                if($("#globe-dd:checked").length){
+                    newData = data.slice();
+                }
+
+                globe = new ENCOM.Globe(window.innerWidth, window.innerHeight, {
+                    font: "Inconsolata",
+                    data: newData, // copy the data array
+                    tiles: grid.tiles,
+                    baseColor: $("#globe-color").val(),
+                    markerColor: $("#marker-color").val(),
+                    pinColor: $("#pin-color").val(),
+                    satelliteColor: $("#satellite-color").val(),
+                    scale: parseFloat($("#globe-scale").val()),
+                    dayLength: 1000 * parseFloat($("#globe-spr").val()),
+                    introLinesDuration: parseFloat($("#globe-id").val()),
+                    maxPins: parseFloat($("#globe-mp").val()),
+                    maxMarkers: parseFloat($("#globe-mm").val()),
+                    viewAngle: parseFloat($("#globe-va").val())
+                });
+
+                $("#globe").append(globe.domElement);
+                globe.init(start);
+            }
+
+            function onWindowResize(){
+                globe.camera.aspect = window.innerWidth / window.innerHeight;
+                globe.camera.updateProjectionMatrix();
+                globe.renderer.setSize(window.innerWidth, window.innerHeight);
+
+            }
+
+            function roundNumber(num){
+                return Math.round(num * 100)/100;
+            }
+
+            function projectionToLatLng(width, height, x,y){
+
+                return {
+                    lat: 90 - 180*(y/height),
+                    lon: 360*(x/width)- 180,
+                };
+
+            }
+
+            function animate(){
+
+                if(globe){
+                    globe.tick();
+                }
+
+                lastTickTime = Date.now();
+
+                requestAnimationFrame(animate);
+            }
+
+            function start(){
+                
+                if(globeCount == 1){ // only do this for the first globe that's created. very messy
+                    $("#apply-button").click(function(e){
+                        globe.destroy(function(){
+                            createGlobe();
+                            });
+                    });
+                    $(".projection").click(function(e){
+                        var offset = $(this).offset();
+                        var latLon = projectionToLatLng($(".projection").width(), $(".projection").height(), e.clientX - offset.left, e.clientY - offset.top);
+
+                        var selectedId = $("#add-element .selected").attr("id");
+
+                        if(selectedId == "add-pin"){
+                            globe.addPin(latLon.lat, latLon.lon, "User Dropped Pin");
+                        } else if(selectedId == "add-marker"){
+                            globe.addMarker(latLon.lat, latLon.lon, "User Marker", true);
+                        } else if(selectedId == "add-satellite"){
+                            var opts = {
+                                coreColor: $("#satellite-color").val(),
+                                numWaves: parseInt($("#globe-si").val())
+                            };
+                            globe.addSatellite(latLon.lat, latLon.lon, parseFloat($("#globe-sa").val()), opts);
+                        }
+                    });
+
+                    $("#add-element li").click(function(e){
+                        $("#add-element li").removeClass("selected");
+                        $(e.currentTarget).addClass("selected");
+                    });
+
+                    animate();
+
+                    /* add pins at random locations */
+                    setInterval(function(){
+                        if(!globe || !$("#globe-dd:checked").length){
+                            return;
+                        }
+                        
+                        var lat = Math.random() * 180 - 90,
+                           lon = Math.random() * 360 - 180,
+                           name = "Test " + Math.floor(Math.random() * 100);
+
+                        globe.addPin(lat,lon, name);
+
+                    }, 5000);
+                }
+                
+                /* add 6 satellites in random locations */
+
+                if($("#globe-dd:checked").length){
+                    setTimeout(function(){
+                        var constellation = [];
+                        var opts = {
+                            coreColor: $("#satellite-color").val(),
+                            numWaves: parseInt($("#globe-si").val())
+                        };
+                        var alt =  parseFloat($("#globe-sa").val());
+
+                        for(var i = 0; i< 2; i++){
+                            for(var j = 0; j< 3; j++){
+                                 constellation.push({
+                                    lat: 50 * i - 30 + 15 * Math.random(), 
+                                     lon: 120 * j - 120 + 30 * i, 
+                                     altitude: alt
+                                     });
+                            }
+                        }
+
+                        globe.addConstellation(constellation, opts);
+                    }, 4000);
+
+                    /* add the connected points that are in the movie */
+                    setTimeout(function(){
+                        globe.addMarker(49.25, -123.1, "Vancouver");
+                        globe.addMarker(35.6895, 129.69171, "Tokyo", true);
+                    }, 2000);
+                }
+
+            }
+
+            function openOptions(){
+                var headerTopPosition = $("#header-top").position().top;
+                var headerBottomPosition = $("#header-bottom").position().top;
+                var headerHeight = $("#header-top").outerHeight(); /* margins or something, whatever */
+                $(".header-animator").offset({top: $(document).height()/2, left: 25});
+                $(".header-animator").height(0);
+
+                $("#options").data("left", $("#options").css("left"));
+                $("#thumbprint").data("left", $("#thumbprint").css("left"));
+                $("#options").animate({left: 0}, 500);
+                $("#thumbprint").animate({left: 265}, 500);
+
+                $("#options-content").delay(1500).animate({opacity: 1}, 500);
+
+                setTimeout(function(){
+                    $(".header-animator").css("visibility", "visible");
+
+                    $("#header-animator-outside").animate({
+                        top: headerTopPosition,
+                        height: headerBottomPosition - headerTopPosition + headerHeight
+                        }, 500);
+
+                    $("#header-animator-inside").animate({
+                        top: headerTopPosition + headerHeight,
+                        height: headerBottomPosition - headerTopPosition - headerHeight
+                        }, 500);
+                }, 500);
+
+                setTimeout(function(){
+                    $(".header-animator").css("visibility", "hidden");
+                    $(".header").css("visibility", "visible");
+                }, 1000);
+
+            }
+
+            function closeOptions(){
+                $("#options").animate({left: $("#options").data("left")}, 500);
+                $("#thumbprint").animate({left: $("#thumbprint").data("left")}, 500);
+                $("#options-content").animate({opacity: 0}, 500);
+                $(".header").css("visibility", "hidden");
+            }
+
+            $(function() {
+                var open = false;
+
+
+                if(!Detector.webgl)
+                {
+                    Detector.addGetWebGLMessage({parent: document.getElementById("container")});
+                    return;
+                }
+
+                window.addEventListener( 'resize', onWindowResize, false );
+
+                $("#globe-color").spectrum({
+                    color: "#ffcc00",
+                    showButtons: false,
+                    showInput: false,
+                    change: function(color){
+                        if(globe){
+                            globe.setBaseColor(color.toHexString());
+                        }
+                    }
+                }); 
+
+                $("#pin-color").spectrum({
+                    color: "#8FD8D8",
+                    showButtons: false,
+                    showInput: false,
+                    change: function(color){
+                        if(globe){
+                            globe.setPinColor(color.toHexString());
+                        }
+                    }
+                }); 
+
+                $("#marker-color").spectrum({
+                    color: "#ffcc00",
+                    showButtons: false,
+                    showInput: false,
+                    change: function(color){
+                        if(globe){
+                            globe.setMarkerColor(color.toHexString());
+                        }
+                    }
+                }); 
+
+                $("#satellite-color").spectrum({
+                    color: "#ff0000",
+                    showButtons: false,
+                    showInput: false,
+                    change: function(color){
+                        if(globe){
+                            for(var x in globe.satellites){
+                                globe.satellites[x].changeCanvas(null, null, color.toHexString());
+                            }
+                        }
+                    }
+
+                }); 
+
+                $("[data-slider]")
+                .each(function () {
+                    var input = $(this);
+                    $("<span>")
+                        .addClass("slider-output")
+                        .insertAfter($(this))
+                        .html(input.val());
+
+                    })
+                    .bind("slider:ready slider:changed", function (event, data) {
+                        $(this)
+                        .nextAll(".slider-output:first")
+                        .html(data.value.toFixed(3));
+                        });
+
+                $(":checkbox").switchButton();
+
+                $("#globe-scale").bind("slider:changed", function (event, data) {
+                    if(globe){
+                        globe.setScale(data.value);
+                    }
+                });
+
+                $("#globe-va").bind("slider:changed", function (event, data) {
+                    if(globe){
+                        globe.viewAngle = data.value;
+                    }
+                });
+
+                $("#globe-spr").bind("slider:changed", function (event, data) {
+                    if(globe){
+                        globe.dayLength = data.value * 1000;
+
+                    }
+                });
+
+                $("#globe-mp").bind("slider:changed", function (event, data) {
+                    if(globe){
+                        globe.setMaxPins(data.value);
+
+                    }
+                });
+
+                $("#globe-mm").bind("slider:changed", function (event, data) {
+                    if(globe){
+                        globe.setMaxMarkers(data.value);
+                    }
+                });
+
+                $("#globe-sa").bind("slider:changed", function (event, data) {
+                    if(globe){
+                        for(var x in globe.satellites){
+                            globe.satellites[x].changeAltitude(data.value);
+                        }
+                    }
+                });
+
+                $("#globe-si").bind("slider:changed", function (event, data) {
+                    if(globe){
+                        for(var x in globe.satellites){
+                            globe.satellites[x].changeCanvas(data.value);
+                        }
+                    }
+                });
+
+                var docHeight = $(document).height();
+
+                WebFontConfig = {
+                    google: {
+                          families: ['Inconsolata']
+                    },
+                    active: function(){
+                        /* don't start the globe until the font has been loaded */
+                        $("#options").css({
+                            "visibility": "visible",
+                            "top": docHeight/2,
+                            "bottom": docHeight/2
+                            }).animate({
+                            "top": 0,
+                            "bottom": 0,
+                            "padding-top": 46
+                            },800,function complete(){
+
+                                $("#thumbprint").animate({opacity: 1});
+                                $("#thumbprint").click(function(){
+                                    if(!open){
+                                        open = true;
+                                        openOptions();
+                                        } else {
+                                        open = false;
+                                        closeOptions();
+                                    }
+                                });
+
+                                setTimeout(function(){
+                                    open = true;
+                                    openOptions();
+                                }, 3000);
+
+                                createGlobe();
+
+                            });
+                    }
+                };
+
+                /* Webgl stuff */
+
+
+                /* web font stuff*/
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                    '://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+
+            });
+		}]).
+    controller('dcController',['$scope','$http',function($scope,$http){
+       
+      
+      $http.get('http://movie-data-analysis-backend.herokuapp.com/api/data/random_twenty/'+$scope.StartYear + '/'+$scope.EndYear+ '/'+$scope.Lang).success(function(data){
+                $scope.people=data
+                //console.log(data)
+              });
+
+              
+
+		}]).
+    controller('wordcloudController',['$scope','$http',function($scope,$http){
+
+      var trace1 = {
+                        x: [1, 2, 3, 4],
+                        y: [10, 11, 12, 13],
+                        mode: 'markers',
+                        marker: {
+                          size: [40, 60, 80, 100]
+                        }
+                      };
+
+                      var data = [trace1];
+
+                      var layout = {
+                        title: 'Marker Size',
+                        showlegend: false,
+                        height: 600,
+                        width: 600
+                      };
+
+			        $http.get('http://movie-data-analysis-backend.herokuapp.com/api/data/word_cloud/'+$scope.StartYear + '/'+$scope.EndYear+ '/'+$scope.Lang).success(function(data){
+                      temp = data;
+                      console.log("--------xxxx--------")
+                      console.log(data);
+                      am4core.useTheme(am4themes_animated);
+                    var chart = am4core.create("WorlCloudChart", am4plugins_wordCloud.WordCloud);
+                    var series = chart.series.push(new am4plugins_wordCloud.WordCloudSeries());
+
+                    series.accuracy = 4;
+                    series.step = 15;
+                    series.rotationThreshold = 0.7;
+                    series.maxCount = 200;
+                    series.minWordLength = 2;
+                    series.labels.template.tooltipText = "{word}: {value}";
+                    series.fontFamily = "Courier New";
+                    series.maxFontSize = am4core.percent(30);
+                    
+                    series.data2 = [{
+                      "tag": "Breaking News",
+                      "weight": 60
+                    }, {
+                      "tag": "Environment",
+                      "weight": 80
+                    }, {
+                      "tag": "Politics",
+                      "weight": 90
+                    }, {
+                      "tag": "Business",
+                      "weight": 25
+                    }, {
+                      "tag": "Lifestyle",
+                      "weight": 30
+                    }, {
+                      "tag": "World",
+                      "weight": 45
+                    }, {
+                      "tag": "Sports",
+                      "weight": 160
+                    }, {
+                      "tag": "Fashion",
+                      "weight": 20
+                    }, {
+                      "tag": "Education",
+                      "weight": 78
+                     }];  
+                    series.data = data['high_word'];
+                    //console.log(data['high_word']);
+                    //console.log(series.data2);
+                    series.dataFields.word = "name";
+                    series.dataFields.value = "weight";
+
+                    });
+                    
+                    
+
+		}]).
+    controller('connectedgraphController',['$scope','$http',function($scope,$http){
+        /**
+        * ---------------------------------------
+        * This demo was created using amCharts 4.
+        * 
+        * For more information visit:
+        * https://www.amcharts.com/
+        * 
+        * Documentation is available at:
+        * https://www.amcharts.com/docs/v4/
+        * ---------------------------------------
+        */
+        $http.get('http://movie-data-analysis-backend.herokuapp.com/api/data/directed_amchart/'+$scope.StartYear + '/'+$scope.EndYear+ '/'+$scope.Lang).success(function(data){
+        //temp = data;
+        // Themes begin
+       // console.log(data);
+        
+        am4core.useTheme(am4themes_animated);
+// Themes end
+
+        var chart = am4core.create("connectedgraph", am4plugins_forceDirected.ForceDirectedTree);
+
+        var networkSeries = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries())
+        networkSeries.dataFields.linkWith = "linkWith";
+        networkSeries.dataFields.name = "name";
+        networkSeries.dataFields.id = "name";
+        networkSeries.dataFields.value = "value";
+        networkSeries.dataFields.children = "children";
+        networkSeries.minRadius = 10;
+        networkSeries.maxRadius = 25;
+
+        networkSeries.nodes.template.label.text = "{name}"
+        networkSeries.fontSize = 8;
+        networkSeries.linkWithStrength = 0;
+
+        var nodeTemplate = networkSeries.nodes.template;
+        nodeTemplate.tooltipText = "{name} : {value}";
+        nodeTemplate.fillOpacity = 1;
+        nodeTemplate.label.hideOversized = true;
+        nodeTemplate.label.truncate = true;
+
+        var linkTemplate = networkSeries.links.template;
+        linkTemplate.strokeWidth = 1;
+        var linkHoverState = linkTemplate.states.create("hover");
+        linkHoverState.properties.strokeOpacity = 1;
+        linkHoverState.properties.strokeWidth = 2;
+
+        nodeTemplate.events.on("over", function (event) {
+            var dataItem = event.target.dataItem;
+            dataItem.childLinks.each(function (link) {
+                link.isHover = true;
+            })
+        })
+
+        nodeTemplate.events.on("out", function (event) {
+            var dataItem = event.target.dataItem;
+            dataItem.childLinks.each(function (link) {
+                link.isHover = false;
+            })
+        })
+        //networkSeries.data = data['network_data'];
+        networkSeries.data = data['network_data'];
+
+        
+        
+        console.log(data);
+        
+
+      });
+
+      
+
+			
+		}]).
+    controller('indeController',['$scope',function($scope){
+			$scope.person=$scope.people[$routeParams.id]
+		}])
+		</script>
+  </div>  
+</body> 
+</html>
