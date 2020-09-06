@@ -53,13 +53,13 @@ We have integrated the CCrazy CCops Game with the website so once you follow the
 Once the website is hosted it will first redirect you to the game and then you can navigate the city and checkout the graphs.
 
 ### Game Screenshots
-![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot1?raw=true "Optional Title")
-![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot2?raw=true "Optional Title")
-![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot3?raw=true "Optional Title")
-![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot4?raw=true "Optional Title")
-![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot5?raw=true "Optional Title")
-![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot6?raw=true "Optional Title")
-![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot7?raw=true "Optional Title")
+![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot1.png?raw=true "Optional Title")
+![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot2.png?raw=true "Optional Title")
+![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot3.png?raw=true "Optional Title")
+![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot4.png?raw=true "Optional Title")
+![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot5.png?raw=true "Optional Title")
+![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot6.png?raw=true "Optional Title")
+![Alt text](/../Features/Scrrenshots/Screenshots/Screenshot7.png?raw=true "Optional Title")
 #### Authors:
 
 | Name | github handle |
