@@ -2,6 +2,8 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
+    <CscToolPath>/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/Tools/RoslynScripts</CscToolPath>
+    <CscToolExe>unity_csc.sh</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{b70069d6-7670-dc5e-81c4-11049e5ef9ac}</ProjectGuid>
+    <ProjectGuid>{D66900B7-7076-5EDC-81C4-11049E5EF9AC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -45,6 +47,14 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="UnityEngine">
+      <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\BoxophobicUtils\Editor\GetBoxophobicFolder.cs" />
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\Constants\Editor\Constants.cs" />
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\SettingsUtils\Editor\LoadSettingsData.cs" />
@@ -70,8 +80,44 @@
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMaterial\Editor\StyledSpaceDrawer.cs" />
      <Compile Include="Assets\BOXOPHOBIC\Utils\Scripts\StyledMono\Editor\StyledMonoBehaviourEditor.cs" />
      <Compile Include="Assets\LowPolyWater_Pack\Scripts\Editor\GeneratePlane.cs" />
- <Reference Include="UnityEngine">
- <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
+ <Reference Include="UnityEditor.TestRunner">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/UnityEditor.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.TestRunner">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/UnityEngine.TestRunner.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline.Editor">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Cinemachine">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.VSCode.Editor">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro.Editor">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.CollabProxy.Editor">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Rider.Editor">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="com.unity.cinemachine.editor">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>/Users/vaibhavrakheja/Documents/Unity Car Game/WebGL_Unity--Ccrazy_Cops_v1.0/Car_Game/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -252,9 +298,6 @@
  </Reference>
  <Reference Include="UnityEngine.XRModule">
  <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor">
- <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEditor.VR">
  <HintPath>/Applications/Unity/Hub/Editor/2019.3.0f6/Unity.app/Contents/UnityExtensions/Unity/UnityVR/Editor/UnityEditor.VR.dll</HintPath>
@@ -634,64 +677,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{52de1778-568c-076a-07d5-62bde1a27f2f}</Project>
+      <Project>{7817DE52-8C56-6A07-07D5-62BDE1A27F2F}</Project>
       <Name>Assembly-CSharp</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.TestRunner.csproj">
-      <Project>{f4e969b3-8783-c163-1617-c1d265b66d3c}</Project>
-      <Name>UnityEditor.TestRunner</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.TestRunner.csproj">
-      <Project>{b406c156-1cec-7f71-a8bb-2a2eb7e1371b}</Project>
-      <Name>UnityEngine.TestRunner</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.Editor.csproj">
-      <Project>{9d811c5a-7f7c-8ba4-4e9e-3fcc66d37e0e}</Project>
-      <Name>Unity.Timeline.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Cinemachine.csproj">
-      <Project>{a374e926-935d-a8e6-62bd-ef4c9183d4db}</Project>
-      <Name>Cinemachine</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.VSCode.Editor.csproj">
-      <Project>{04933625-f27c-06ef-9f61-7b74dfc0068e}</Project>
-      <Name>Unity.VSCode.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj">
-      <Project>{44320408-f05a-da5f-ce06-689516a556b0}</Project>
-      <Name>Unity.TextMeshPro.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEngine.UI.csproj">
-      <Project>{23f16995-2966-a2d4-1c7c-07e06a3ac9f3}</Project>
-      <Name>UnityEngine.UI</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Timeline.csproj">
-      <Project>{8701c212-e37e-0fd3-ea2f-e46b0c36e9d1}</Project>
-      <Name>Unity.Timeline</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.CollabProxy.Editor.csproj">
-      <Project>{3e68e49e-cdb7-2c56-a950-aba10f8a8376}</Project>
-      <Name>Unity.CollabProxy.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.Rider.Editor.csproj">
-      <Project>{6ac4a2e0-db08-2417-2d86-0aef90fd8455}</Project>
-      <Name>Unity.Rider.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="com.unity.cinemachine.editor.csproj">
-      <Project>{8f3f56cd-d3bd-90d6-fa93-c2b06de579b5}</Project>
-      <Name>com.unity.cinemachine.editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Unity.TextMeshPro.csproj">
-      <Project>{6ee4dc94-38d6-c059-c984-b2403aab6b31}</Project>
-      <Name>Unity.TextMeshPro</Name>
-    </ProjectReference>
-    <ProjectReference Include="UnityEditor.UI.csproj">
-      <Project>{32aee187-6090-4039-3979-f453d82f0ccc}</Project>
-      <Name>UnityEditor.UI</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
   </Target>

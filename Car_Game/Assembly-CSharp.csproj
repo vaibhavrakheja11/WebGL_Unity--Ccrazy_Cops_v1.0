@@ -88,6 +88,10 @@
      <Compile Include="Assets\Cartoon SportCar B01\script\brake_light.cs" />
      <Compile Include="Assets\Cartoon SportCar B01\script\on_off_light.cs" />
      <Compile Include="Assets\DialogControl.cs" />
+     <Compile Include="Assets\Flashbang M-84\CaptureScreen.cs" />
+     <Compile Include="Assets\Flashbang M-84\FadeOut.cs" />
+     <Compile Include="Assets\Flashbang M-84\Flashbang.cs" />
+     <Compile Include="Assets\Flashbang M-84\ThrowObject.cs" />
      <Compile Include="Assets\LightEffect.cs" />
      <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
      <Compile Include="Assets\Scripts\Dialogue.cs" />
